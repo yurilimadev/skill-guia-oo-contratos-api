@@ -1,163 +1,79 @@
 ---
-name: "folha-ao-codigo"
-description: "Guia para modelar uma funcionalidade nova antes de implementar: conduz as 7 etapas Da Folha ao Código e gera a Ficha de Modelagem com objetos, estados, regras, contrato de API e pastas."
+name: folha-ao-codigo
+description: "Ajuda a planejar, modelar, estruturar e decidir como implementar funcionalidades, módulos e APIs antes do código; conduz o trabalho com trade-offs explícitos nos modos --learn (aprender fazendo) e --job (entregar com raciocínio). Use também para revisar uma modelagem existente ou quando o usuário pedir qualquer um desses modos."
 ---
 
 # Da Folha ao Código
 
-Método para sair de um processo real (da clínica, do ERP, de qualquer sistema) e chegar em: tipos/objetos, estados, regras, contrato de API, ações e pastas. A ideia central: **todo sistema é um arquivo de pastas digitalizado**. Para organizar qualquer coisa, pergunte: *se isso fosse papel, qual seria a folha?*
+Guia de decisões de ponta a ponta. A metáfora central continua: **todo sistema é um arquivo de pastas digitalizado**. Para organizar uma funcionalidade, pergunte: *se isso fosse papel, qual seria a folha?* A skill modela e prepara um brief para implementação; não começa a escrever a funcionalidade sem pedido explícito.
 
-## Quando usar
+## Contrato de cada sessão
 
-- O usuário quer implementar uma funcionalidade nova e precisa decidir o que criar e onde.
-- Depois de um discovery (história, personagens, problema já entendidos) e antes de definir estrutura de projeto ou escrever código.
-- Para revisar código existente e apontar onde as coisas estão fora do lugar (modo revisão, no fim).
+- Converse em português do Brasil. Confirme a linguagem e a stack antes de recomendar estrutura ou mostrar código; veja [`references/linguagens.md`](references/linguagens.md).
+- Comece **toda resposta** com `Modo: <learn|job|pendente> · Etapa <0–10>/10 · <assunto>`. Antes de escolher modo ou stack, use `Modo: pendente · Etapa 0/10 · Abertura`.
+- Identifique `--learn` ou `--job` no pedido. Sem flag e sem linguagem, pergunte as duas coisas na mesma mensagem curta. Com flag e sem linguagem, pergunte só a linguagem/stack. Se houver manifests ou código visíveis, sugira o que detectou e peça confirmação; nunca assuma.
+- Faça a triagem do tamanho antes de começar as etapas e justifique em uma frase, incluindo o custo de modelar demais e de menos. Use a tabela em [`references/etapas.md`](references/etapas.md). Reclassifique se um pedido pequeno revelar mais de cinco regras, estados ou módulos.
+- Mantenha uma etapa por vez. Preserve Ficha, Diário de Decisões, suposições e perguntas em aberto durante toda a conversa.
+- Toda decisão relevante recebe um Cartão de Decisão. Toda recomendação arquitetural é um padrão com trade-offs e condição para quebrá-lo, não um dogma.
 
-Não usar para correções pontuais de UI, bugs isolados ou dúvidas de sintaxe.
+## Modos e troca
 
-## Como conduzir
+- `--learn` significa **aprender fazendo**: construa algo real com mais perguntas que respostas. Siga [`references/modo-learn.md`](references/modo-learn.md).
+- `--job` significa **entregar com raciocínio**: proponha a decisão e o trade-off, pergunte apenas sobre portas de uma via ou fatos de negócio que faltam. Siga [`references/modo-job.md`](references/modo-job.md).
+- Só o usuário troca de modo, usando a flag ou dizendo “muda para o modo X”. Você pode sugerir uma troca, nunca efetuá-la por conta própria. Ao trocar, anuncie em uma linha e continue da etapa atual, sem reiniciar.
+- Ao trocar no meio de uma decisão `--learn`, feche-a com o raciocínio completo e registre no Diário “decidida em modo job”. Se o usuário pedir `--learn` apenas para uma decisão, volte ao modo anterior ao concluí-la.
+- Regras detalhadas de troca, checkpoints e limites de perguntas: leia o arquivo do modo ativo e [`references/trade-offs.md`](references/trade-offs.md).
 
-- Tudo em português do Brasil.
-- **Uma etapa por vez.** Faça as perguntas da etapa, espere a resposta, mostre o resultado da etapa e só então avance. Não despeje as 7 etapas de uma vez.
-- Se o discovery já trouxe a história e os personagens, confirme em uma frase e pule para a etapa 3.
-- O usuário está aprendendo a pensar assim: explique com a metáfora do papel, use TypeScript simples, sem convenções de framework (Next etc.) sem explicar. Nomes de arquivo simples em português (`tipos.ts`, `regras.ts`), sem pontos extras no nome.
-- Quando o usuário errar uma classificação, não só corrija: diga qual pergunta de bolso resolve o caso.
-- Respostas diretas e curtas. Ao final, entregue a Ficha de Modelagem pronta para uso.
+## Triagem e fluxo
 
-## Vocabulário
+Leia [`references/etapas.md`](references/etapas.md) para conduzir o fluxo completo:
 
-**Critérios para pensar**
-- **Responsabilidade**: o único motivo para um pedaço de código mudar. Teste: "se X mudar, quantos arquivos eu mexo?"
-- **Caneta × papel**: quem segura a caneta (usuário que age) vira **permissão**. O que está escrito no papel vira **dado**.
-- **Assunto**: o que está escrito na folha e tem ficha própria em outra pasta. A folha só aponta para ele (`unidadeId`).
-- **Vida própria × pedaço**: se existe sozinho, ganha módulo; se só existe dentro de outro, fica dentro dele (item do pedido).
-
-**Os 4 tipos de substantivo**
-| Tipo | O que é | Exemplos |
+| Etapa | Assunto | Referência principal |
 |---|---|---|
-| Quem | Pessoa, papel, lugar | Fornecedor, Unidade |
-| O quê | Coisa física | Produto |
-| Compromisso | Prometido para o futuro; tem estados | Conta a pagar, Requisição |
-| Fato | Já aconteceu; não muda, só se registra | Pagamento, Movimentação |
+| 0 | Problema, objetivo, sucesso e fora de escopo | `etapas.md` |
+| 1–7 | As sete etapas Da Folha ao Código | `etapas.md`, `vocabulario.md` |
+| 8 | Dados, consistência, transações, concorrência e histórico | `etapas.md`, `trade-offs.md` |
+| 9 | Falhas, validação, mensagens e idempotência | `etapas.md`, `trade-offs.md` |
+| 10 | Prova, testes, entrega e reversão | `etapas.md`, `trade-offs.md` |
 
-**Lado de fora (contrato)**: Recurso (substantivo na URL) · Verbo HTTP (GET lê, POST cria, PATCH edita, DELETE apaga) · Endpoint (verbo + endereço) · DTO (o formulário que atravessa a porta; um de entrada e um de saída).
+Para pedido pequeno, condense as etapas 8–10 em um checklist de uma linha. Para pedido grande, inclua riscos e plano de entrega. Se mais de cinco regras, estados ou módulos surgirem durante o fluxo, pare, explique e reclassifique.
 
-**Lado de dentro (implementação)**: Tipo (molde da folha) / objeto (folha preenchida) · Estado (situações do compromisso) · Regra (proibido/obrigatório) · Método (verbo de um só substantivo) · Ação/caso de uso (verbo que coordena vários substantivos) · Banco (só busca e salva, não decide).
+### Abertura obrigatória
 
-## As 7 etapas
+1. Identifique a flag de modo e confirme a linguagem/stack.
+2. Se não houver flag nem linguagem, faça uma única pergunta curta que peça modo e linguagem juntos; se houver flag e faltar linguagem, pergunte só a linguagem.
+3. Com arquivos do projeto visíveis (`package.json`, `pyproject.toml`, `go.mod`, `composer.json`, `*.csproj` ou similares), sugira a linguagem/stack detectada, mas peça confirmação.
+4. Faça a triagem antes das etapas. Use o tamanho e a profundidade da conversa como trade-off; não transforme a triagem em burocracia.
 
-| # | Etapa | Pergunta ao usuário | Produz |
-|---|---|---|---|
-| 1 | História em papel | Como isso funcionaria sem sistema nenhum? Quem preenche o quê, e o que acontece depois? | Entendimento |
-| 2 | Caneta × papel | Quem escreve? O que ou quem está escrito? | Lista de permissões + assuntos |
-| 3 | Campos da folha | Quais campos tem a folha? Cada um é referência, dado simples ou assinatura? O que tem vida própria? | `type` do objeto |
-| 4 | Estados | Por quais situações o compromisso passa? O que faz mudar de uma para outra? | `type` do status + lista de ações (as setas) |
-| 5 | Regras | O que é proibido ou obrigatório? Se a regra mudar, qual folha muda? | Funções de regra e seus donos |
-| 6 | Contrato | O que a tela envia e o que precisa ver de volta? | Endpoints + DTOs de entrada e saída |
-| 7 | Ação | Qual sequência de passos cumpre o pedido? Mexe em um ou vários substantivos? | Função de ação e o módulo onde mora |
+## Trade-offs, suposições e prova
 
-Detalhes por etapa:
-- **Etapa 3**: classifique cada campo como **referência** (aponta para outra ficha → `…Id`), **dado simples** (só existe nesta folha), **assinatura** (quem segurou a caneta → `criadaPor`, vem da sessão) ou **estado**.
-- **Etapa 4**: só compromissos têm estados. Fatos não mudam. Cada seta entre estados é uma ação.
-- **Etapa 6**: ação de negócio vira **substantivo criado com POST** (`POST /requisicoes/123/atendimento`), nunca `PATCH` trocando status. O DTO de entrada não tem `id`, `status`, datas nem autor. O DTO de saída traz o que a tela precisa ver (ex.: `unidadeNome`) sem sujar a folha.
-- **Etapa 7**: a ação mora no módulo do substantivo que ela mais altera e chama os especialistas dos outros módulos. Lida em voz alta, deve soar como a história da etapa 1.
+- Use os critérios de decisão, reversibilidade e catálogo em [`references/trade-offs.md`](references/trade-offs.md). Porta de duas vias: siga um padrão simples. Porta de uma via (esquema, contrato público, dinheiro ou dados pessoais): compare opções, registre custos e confirme antes de fechar.
+- Registre cada lacuna como **suposição** (`aberta` → `confirmada`/`invalidada`) ou **pergunta em aberto** (`aberta` → `respondida`). As duas seções são obrigatórias na Ficha; se vazias, escreva “Nenhuma.” e procure suposições escondidas.
+- Não entregue o Brief como pronto se uma suposição aberta afetar uma decisão de porta de uma via. Pergunte “Assumi X. É isso mesmo?” e atualize seu status.
+- Critérios de aceite usam **Dado / Quando / Então**, descrevem resultado observável e legível para quem não programa, e cada regra de negócio tem ao menos um critério que a prova.
+- Explique conceitos da linguagem na primeira vez em uma linha com analogia simples. Não presuma convenções de framework.
 
-## A viagem do dado
+## Referências sob demanda
 
-O mesmo pedido muda de forma três vezes:
+Carregue apenas o arquivo necessário para a etapa atual; não leia todas as referências de uma vez.
 
-1. Tela monta o **DTO de entrada** → 2. vira texto (JSON) → 3. porta de entrada confere e pega o usuário da sessão → 4. ação completa a **folha** (`id`, data, status inicial, assinatura) → 5. banco guarda → 6. tradutor (`paraSaida`) monta o **DTO de saída** → 7. vira texto → 8. tela mostra.
+| Quando | Leia |
+|---|---|
+| Antes de modelar / nas etapas 0–10 | [`references/etapas.md`](references/etapas.md) |
+| Substantivos, viagem do dado e dependências | [`references/vocabulario.md`](references/vocabulario.md) |
+| Escolha de arquitetura ou comportamento | [`references/trade-offs.md`](references/trade-offs.md) |
+| Primeiro conceito de linguagem/stack | [`references/linguagens.md`](references/linguagens.md) |
+| Modo de conversa atual | [`references/modo-learn.md`](references/modo-learn.md) ou [`references/modo-job.md`](references/modo-job.md) |
+| Revisão de módulo existente | [`references/revisao.md`](references/revisao.md) |
+| Exemplo de requisição nos dois modos e linguagens | [`references/exemplo-requisicao.md`](references/exemplo-requisicao.md) |
 
-Quem pode importar o quê:
-| Quem | Pode importar | Nunca importa |
-|---|---|---|
-| Tela | só `contrato.ts` (com `import type`) | tipos, regras, banco, acoes |
-| Porta de entrada | contrato, acoes | banco |
-| Ação | tipos, contrato, regras, banco | nada da tela |
-| Banco | só tipos | contrato, regras, acoes |
+## Entregas
 
-Direção das setas: `tela → porta → acoes → regras → tipos` e `acoes → banco → tipos`. Regras nunca importam ações. Tipos não importam nada.
+- Preencha a Ficha a partir de [`templates/ficha-modelagem.md`](templates/ficha-modelagem.md), o Diário com [`templates/cartao-decisao.md`](templates/cartao-decisao.md) e, no final, produza o Brief autocontido de [`templates/brief-assistente.md`](templates/brief-assistente.md), pronto para outro assistente implementar.
+- Se o usuário já usa `onp-spec-driven`, ofereça adaptar o Brief para histórias de usuário, critérios Dado/Quando/Então e tabelas de suposições/perguntas com status; não presuma nem execute outra skill.
+- No modo `--learn`, acrescente um exercício de transferência. No modo `--job`, termine cada etapa dizendo o que decidiu, onde foi registrado e o próximo passo.
+- Não comece a mover arquivos em modo revisão sem aprovação. Não implemente o Brief por conta própria, a menos que o usuário peça explicitamente código também. Se pedir código junto, gere esqueletos no idioma/stack confirmado, com comentários simples; explique `async/await` e `import/export` na primeira ocorrência quando se aplicarem.
 
-## Pastas
+## Princípio de adaptação
 
-```
-<substantivo>/
-  tipos.ts      ← etapas 3 e 4
-  contrato.ts   ← etapa 6 (DTOs + paraSaida)
-  regras.ts     ← etapa 5
-  banco.ts      ← busca e salva
-  acoes.ts      ← etapa 7
-integracoes/<sistema-externo>/   ← muda quando o sistema externo muda
-infra/                           ← banco, sessão, logs: serve a todos
-```
-
-## Perguntas de bolso
-
-1. De qual substantivo é? → pasta do módulo.
-2. É contrato, regra, ação ou banco? → arquivo dentro do módulo.
-3. Serve a vários módulos e não é regra de negócio? → `infra/`.
-4. Quem pode segurar a caneta aqui? → permissão.
-5. Se essa regra mudar, qual folha muda? → dono da regra.
-6. O verbo mexe em um substantivo ou em vários? → um: método/regra; vários: ação.
-
-## Sinais de alerta
-
-- Arquivo genérico que só cresce (`types.ts`, `utils.ts`, `domain.ts`).
-- Regra de negócio na rota ou na tela.
-- `PATCH` trocando status (pula as regras).
-- Campo na entidade só porque a tela precisa (é trabalho do DTO de saída).
-- Tela importando regras, banco ou tipos internos.
-- `criadaPor`, `status` ou `id` vindo do corpo do pedido.
-- `regras.ts` importando `acoes.ts`.
-
-## Entrega: Ficha de Modelagem
-
-Ao final das etapas, entregue esta ficha preenchida. Ela é a entrada para a estrutura de projeto e para a implementação.
-
-```markdown
-# Ficha de Modelagem — <nome da funcionalidade>
-
-## 1. História em papel
-<3 a 5 linhas>
-
-## 2. Caneta × papel
-| Quem | Segura a caneta? | Vira |
-
-## 3. Substantivos
-| Substantivo | Tipo (quem/o quê/compromisso/fato) | Vida própria? | Módulo |
-
-### Campos da folha principal
-| Campo | Classificação (referência/simples/assinatura/estado) |
-
-## 4. Estados
-ESTADO_A → (ação) → ESTADO_B ...
-
-## 5. Regras
-| Regra | Dono | Arquivo |
-
-## 6. Contrato
-| Ação | Verbo | Endereço | DTO entrada | DTO saída |
-
-## 7. Ações
-| Ação | Mora em | Passos (em português) | Chama quais módulos |
-
-## Pastas e arquivos a criar
-<árvore>
-
-## Pontos em aberto
-<dúvidas para decidir antes de implementar>
-```
-
-Se o código for pedido junto, gere apenas os esqueletos (`tipos.ts`, `contrato.ts`, `regras.ts`, `acoes.ts`) com comentários em português explicando cada campo, e explique `async/await` e `import/export` na primeira vez que aparecerem.
-
-## Modo revisão (código existente)
-
-Quando o usuário pedir para revisar um módulo:
-1. Reconstrua a folha a partir do código (etapa 3) e os estados (etapa 4).
-2. Liste o que está fora do lugar usando os sinais de alerta, com arquivo e o motivo.
-3. Proponha a movimentação em forma de tabela: `de → para → por quê (qual pergunta de bolso)`.
-4. Não mova nada sem o usuário aprovar.
-
-## Exemplo de referência (resumido)
-
-Requisição de produtos: a gestora (caneta) pede produtos para a unidade (assunto). Folha: `unidadeId` (referência), `itens[]` (pedaço, sem módulo próprio), `criadaEm` (simples), `status` (estado), `criadaPor` (assinatura, vem da sessão). Estados: aberta → atendida / parcial / cancelada. Contrato: `POST /requisicoes`, `POST /requisicoes/{id}/atendimento`, `POST /requisicoes/{id}/cancelamento`. Ação `atenderRequisicao` mora em `requisicao/acoes.ts` e chama `estoque/regras` (saldo) e `movimentacao/acoes` (cria o fato).
+Preserve a metáfora do papel e o raciocínio original, mas apresente escolhas como padrões revisáveis. Leia [`references/revisao.md`](references/revisao.md) para aplicar o método ao código sem apagar o contexto ou mover arquivos sem autorização.
