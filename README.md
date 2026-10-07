@@ -1,83 +1,73 @@
-# Da Folha ao Código — Skill
+# Da Folha ao Código — Full Cycle
 
-Skill em português para pensar uma funcionalidade de ponta a ponta, explicitar trade-offs e preparar um brief pronto para implementação. Mantém o método Da Folha ao Código e acrescenta dois modos: `--learn` (aprender fazendo) e `--job` (entregar com raciocínio).
+Skill em português para construir, herdar e operar sistemas. Ajuda a transformar domínio em decisões, entender o que já existe, proteger mudanças em produção e criticar propostas de IA. O método mantém a metáfora do papel e as sete etapas originais dentro do fluxo de Construir.
 
 ## Instalação
 
-No projeto em que você quer usar a skill, execute:
+No projeto em que quer usar a skill:
 
 ```bash
 npx skills add yurilimadev/skill-guia-oo-contratos-api
 ```
 
-Para instalar globalmente para o seu usuário, acrescente `-g`:
+Para instalar globalmente, acrescente `-g`:
 
 ```bash
 npx skills add yurilimadev/skill-guia-oo-contratos-api -g
 ```
 
-O comando usa o CLI `skills`, que instala skills em agentes compatíveis. Para escolher um agente específico, consulte `npx skills add --help`.
+O CLI `skills` instala em agentes compatíveis. Para direcionar a instalação, consulte `npx skills add --help`.
 
-## Como usar
+## As três entradas
 
-Inclua a flag de modo no pedido e confirme a linguagem/stack. Se houver manifests no projeto, a skill sugere o que detectou e pede confirmação antes de decidir. Ela começa cada resposta com uma linha de estado, por exemplo: `Modo: learn · Etapa 3/10 · Campos da folha`.
+- **Construir** — modelar funcionalidade nova com etapas 0–10, lente de domínio, teste de estresse e compromisso de retorno em produção.
+- **Herdar** — fazer Raio-X de sistema que já existe, mesmo que tenha sido feito por você; só leitura por padrão, evidências e refatoração incremental.
+- **Operar** — medir saúde, correção, segurança, backup e mudança segura sem executar comandos em produção sem autorização.
 
-### `--learn` — aprender fazendo
+`--learn` (aprender fazendo) e `--job` (entregar com raciocínio) funcionam nas três entradas. A lente de crítica, os arreios e a documentação viva acompanham qualquer caminho.
 
-Mais perguntas que respostas, uma decisão real de cada vez. Antes de recomendar, a skill pergunta quais opções você vê e o que perde com cada uma.
+## Como começar
 
-```text
---learn
-Quero modelar a funcionalidade [nome] antes de implementar.
-Linguagem/stack: [por exemplo, Python 3.12 — confirme se detectou outra no projeto]
-Contexto: [problema, para quem e processo atual sem sistema]
-Resultado esperado: [o que a pessoa deve conseguir fazer]
-Regras ou limites que já conheço: [se houver]
-Conduza-me por Da Folha ao Código uma etapa por vez. Ajude-me a pensar antes
-de apresentar a recomendação. Ao final, entregue a Ficha, o Diário de Decisões,
-suposições/perguntas em aberto, Brief para Assistente e um exercício parecido
-para eu resolver sozinho. Não implemente ainda.
-```
-
-### `--job` — entregar com raciocínio
-
-A skill propõe a decisão, explica o trade-off em poucas frases e pergunta quando falta uma decisão de negócio ou há uma porta de uma via.
+Informe entrada, modo, linguagem do projeto (alvo) e a linguagem que domina melhor (referência). Se o projeto estiver aberto, a skill sugere o que detectou e pede confirmação. A referência pode ser trocada durante a conversa.
 
 ```text
---job
-Modele [funcionalidade] para [usuário/objetivo]. A stack é [linguagem e versão].
-Processo atual: [como funciona hoje]
-Resultado e limites: [o que precisa acontecer e o que fica fora]
-Conduza as etapas necessárias sem pular nenhuma; agrupe as perguntas de cada
-etapa numa rodada. No final, entregue Ficha, Cartões de Decisão e Brief
-autocontido para outro assistente implementar. Não escreva o código da feature.
+Entrada: Construir · --learn
+Linguagem alvo: TypeScript do projeto
+Linguagem de referência: Python
+Quero modelar a divergência no recebimento de estoque. Hoje a equipe confere itens
+e anota diferenças no papel. Quero descobrir o que deve ser registrado antes de
+escrever código. Conduza uma etapa por vez.
 ```
-
-### Trocar de modo e revisar
-
-Você pode mudar de modo durante a conversa: diga `--job` ou `--learn` (ou “muda para o modo X”). A skill anuncia a troca, mantém Ficha, Diário e perguntas, e continua na etapa atual.
-
-Para revisar código existente, por exemplo:
 
 ```text
---job
-Revise o módulo [nome/caminho] usando Da Folha ao Código. Reconstrua a folha
-e os estados, aponte sinais de alerta com arquivo e motivo e proponha
-de → para → por quê e os trade-offs. Não mova nem altere arquivos sem minha aprovação.
-Linguagem/stack: [confirme a detectada]
+Entrada: Herdar · --job
+Alvo: TypeScript/Next.js · Referência: Python
+Herdei o módulo de estoque. Faça um inventário e trace o fluxo de registrar uma
+entrada. Só leitura; cite arquivo:linha e separe fato de hipótese.
 ```
 
-O fluxo completo está em [`SKILL.md`](./SKILL.md); as referências são carregadas sob demanda.
+```text
+Entrada: Operar · --learn
+Alvo: [linguagem/stack] · Referência: Python
+Às vezes uma requisição falha e volta a funcionar com F5. Ajude-me a descobrir
+que evidência falta e qual pergunta fazer primeiro; não altere produção.
+```
 
-## O que a skill faz
+Se ainda não souber qual entrada escolher, descreva o problema: a skill sugere a entrada e pede confirmação. Durante a sessão, diga “muda para Herdar” ou use a flag correspondente para trocar modo; decisões e evidências continuam registradas.
 
-- Ajuda a transformar um processo real em tipos, estados, regras, contrato de API e ações.
-- Conduz uma etapa por vez, fazendo perguntas e mostrando o resultado antes de avançar.
-- Entrega uma Ficha de Modelagem pronta para orientar a implementação.
-- Inclui um modo de revisão para identificar responsabilidades fora do lugar em código existente.
+## Documentação e segurança
 
-Leia [`SKILL.md`](./SKILL.md) para ver as instruções completas.
+O ponto de partida pode ser qualquer etapa e qualquer estado do projeto. Se `docs/` existir, a skill lê o diário, operação e decisões relevantes antes de perguntar; documentos vivos são atualizados, não recriados. A skill oferece escrever no projeto, mas só faz isso com permissão.
+
+Herdar é somente leitura por padrão. Operar não executa comandos nem muda DNS, servidor ou banco sem aprovação explícita. Toda evidência distingue “não existe”, “existe, não verificado” e “existe e verificado”.
+
+## Mudanças — versão 3.0.0
+
+- Adiciona entradas Construir, Herdar e Operar; preserva as etapas 0–10 e a revisão anterior.
+- Acrescenta lente de domínio, Raio-X, evidências de operação, arreios e crítica obrigatória.
+- Cria documentação viva, registros retroativos, chapéus e Mapa de envolvidos.
+- Amplia a ponte de linguagens para TypeScript, Python, Java, C#, Go e PHP.
 
 ## Créditos
 
-Este guia adapta, com crédito, ideias de linguagem simples, dimensionamento pelo tamanho do problema, registro de suposições/perguntas, critérios observáveis e referências carregadas sob demanda da skill [`onp-spec-driven`](https://github.com/onovoprogramador/onp-spec-driven), de Vitor Manoel — O Novo Programador, disponibilizada sob licença MIT. O texto e o método de modelagem deste repositório foram reorganizados e escritos para Da Folha ao Código; o motor/scripts daquela skill não foram copiados.
+Algumas práticas de linguagem simples, dimensionamento, registro de suposições/perguntas, critérios observáveis e carregamento progressivo foram adaptadas com crédito à skill [`onp-spec-driven`](https://github.com/onovoprogramador/onp-spec-driven), de Vitor Manoel — O Novo Programador, disponibilizada sob MIT. O texto, as entradas e o método de modelagem foram escritos para Da Folha ao Código; nenhum script ou motor da referência foi copiado.
