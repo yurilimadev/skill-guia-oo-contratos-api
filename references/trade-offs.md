@@ -103,3 +103,25 @@ Ao revisar o método, procure “sempre”, “nunca” e “só”. Para escolh
 ## Diário
 
 Registre opções, escolha, ganho, custo, reversibilidade, gatilho para revisitar e modo em que foi decidida. Em `--learn`, espere a reflexão do usuário antes de apresentar a recomendação; em `--job`, proponha uma opção e o trade-off em 1–2 frases.
+
+## Extensões para domínio, legado e operação
+
+Os padrões 1–10 continuam acima. Use as extensões abaixo quando a entrada e a evidência trouxerem a decisão; não modele riscos hipotéticos só para cobrir o catálogo.
+
+| Decisão | Padrão | Quando quebrar | Custo de seguir | Custo de não seguir |
+|---|---|---|---|---|
+| 11. Entidade × valor | Dar identidade persistente a algo reconhecido que muda mantendo continuidade; usar valor para descrição sem identidade | Quando o domínio não distingue continuidade ou o registro é rascunho descartável | Mais IDs, relações e decisões de ciclo de vida | Duplicação, histórico sem dono ou edição alterando objetos sem querer |
+| 12. Copiar × apontar | Copiar o retrato que precisa permanecer fiel (preço, custo, descrição contratada); apontar para cadastro atual quando o dado deve acompanhar a fonte | Dado é sempre atual e histórico não é necessário; ou cópia cria risco maior | Mais storage e reconciliação entre fonte e snapshot | Relatório passado muda quando o cadastro atual muda |
+| 13. Agregado grande × pequeno | Menor fronteira que garante invariantes que precisam mudar juntas | Requisito comprovado exige consistência maior e o custo de concorrência é aceitável | Mais fronteiras, coordenação e testes | Grande causa contenção; pequeno demais permite estados inconsistentes |
+| 14. Modelo único × contextos separados | Compartilhar quando termos, regras e ciclo mudam juntos; separar quando a palavra muda de sentido por setor | Contextos têm a mesma semântica e dono de mudança | Traduções e integração entre contextos | Modelo universal ganha campos condicionais e regras contraditórias |
+| 15. Modelar futuro agora × esperar | Registrar gatilho provável; modelar agora quando a porta é cara de reabrir | Cenário especulativo ou fácil de migrar; esperar preserva velocidade | Campos/abstrações talvez nunca usados | Migração mais cara se mudança provável vier sem espaço de evolução |
+| 16. Estado atual × histórico/eventos | Guardar estado atual; acrescentar histórico/evento quando alguém precisa saber o que ocorreu e quando | Sem necessidade de auditoria, consulta temporal ou reação a eventos | Armazenamento, retenção e consistência dos eventos | Não conseguir explicar mudança, reconstituir saldo ou identificar causa |
+| 17. Refatorar aos poucos × reescrever | Refatorar em fatias protegidas por testes de caracterização e rollback | Reescrita tem custo total menor provado, escopo claro e migração/convivência seguras | Manter por um tempo código antigo e novo | Big-bang perde comportamento implícito, alonga prazo e dificulta reversão |
+| 18. Teste de caracterização antes × depois | Capturar comportamento atual antes de mexer no legado | Sistema descartável ou cobertura equivalente já verificada | Tempo para registrar comportamento, inclusive bugs conhecidos | Mudança acidental se confunde com correção; usuário pode perder comportamento dependido |
+| 19. Corrigir sintoma × causa | Conter risco imediato e investigar causa com evidência em passo distinguível | Causa desconhecida e mitigação segura imediata é necessária | Duas etapas e trabalho de investigação | Patch superficial esconde recorrência; buscar causa antes de conter prolonga dano |
+| 20. Serviço gerenciado × hospedar | Serviço gerenciado se reduz operação sem violar custo, privacidade ou controle | Requisito de controle, localização, custo sustentado ou conectividade impede serviço | Dependência do fornecedor, custo recorrente e limites de configuração | Patch, backup e monitoramento ficam sob responsabilidade local |
+| 21. Homologação × teste cauteloso em produção | Ambiente isolado e representativo; produção só para comportamento normal com plano aprovado | Não há homologação e prova exige tráfego real; planeje proteções e aprovação explícita | Manter sincronização e detectar diferenças entre ambientes | Testar com dados/usuários reais pode causar dano e dificultar rollback |
+| 22. Coletor de erros × logs próprios | Ferramenta mantida se agrupamento/contexto/alerta couberem em privacidade e preço | Volume pequeno, logs existentes bastam ou vendor lock-in é inaceitável | Dependência, custo e configuração de retenção | Equipe mantém parsing, deduplicação, busca, contexto e alertas |
+| 23. Alertar tudo × alertas mínimos úteis | Alertar sintomas acionáveis, com responsável e instrução; registrar sinais menos urgentes sem paginar | Um sinal raro tem impacto severo e precisa acionar imediatamente | Falsos positivos geram fadiga e escondem incidentes | Sem alerta crítico, descoberta depende de reclamação ou perda de negócio |
+
+Para itens 17–23, consulte evidência e limites de segurança em Herdar/Operar. “Testar em produção com cuidado” não autoriza executar; exige aprovação explícita conforme `references/entradas/operar.md`.

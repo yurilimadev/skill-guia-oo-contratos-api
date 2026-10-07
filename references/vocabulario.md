@@ -76,3 +76,14 @@ Cada resposta é um critério inicial para comparar opções; se o contexto apon
 ## Sinais de alerta herdados
 
 Leia [`revisao.md`](revisao.md) para o catálogo completo, o motivo de cada alerta e quando uma alternativa pode ser aceitável.
+
+## Full Cycle: evidência e registro
+
+- **Confirmado:** observado diretamente em código, configuração, dado redigido ou prova repetível. Cite o caminho/linha ou evidência segura.
+- **Existe, não verificado:** foi declarado/encontrado, mas o resultado não foi provado. Um backup configurado sem restore testado é o exemplo típico.
+- **Não existe:** foi verificado no escopo consultado e não foi encontrado; registre onde se procurou.
+- **Hipótese/suposição:** inferência para continuar; permanece `aberta` até confirmada ou invalidada.
+- **Pergunta em aberto:** depende de resposta do dono do processo; permanece `aberta` até respondida.
+- **Registro retroativo:** decisão já aplicada sem registro; descreva evidência e motivo conhecido ou “motivo não registrado”.
+
+Um **invariante** protege a validade de uma folha; uma **política** pode ser ajustada por decisão do negócio. Veja `dominio.md` para exemplos e limites.
