@@ -7,7 +7,8 @@
 - **Objetivo / para quem:**
 - **Critérios de sucesso:**
 - **Fora de escopo:**
-- **Linguagem/stack e versão confirmadas:**
+- **Linguagem alvo/stack e versão confirmadas:**
+- **Linguagem de referência para explicações:**
 
 ## Módulos e arquivos
 
@@ -47,6 +48,11 @@ Use Dado/Quando/Então observável; toda regra deve estar provada por pelo menos
 - Perguntas em aberto e status:
 - Se alguma suposição aberta for porta de uma via, **não iniciar a implementação** até confirmar.
 
+## Quem validar
+
+| Chapéu | Pergunta/parte a validar | Quem veste | Status |
+|---|---|---|---|
+
 ## O que NÃO fazer
 
 - Não alterar arquivos fora dos caminhos acordados sem perguntar.
@@ -60,6 +66,17 @@ Use Dado/Quando/Então observável; toda regra deve estar provada por pelo menos
 - Plano de testes:
 - Entrega e reversão:
 - Arquivos esperados ao final:
+
+## O que documentar e onde
+
+- Ficha/Mapa/Raio-X/Operação:
+- Registros de Decisão e Diário:
+
+## Pontos fracos desta proposta
+
+- Custo de desfazer:
+- Suposição não confirmada:
+- Mudança provável que pode quebrar a proposta:
 
 ## Variante para `onp-spec-driven` (se o usuário já usar essa skill)
 
