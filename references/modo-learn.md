@@ -28,6 +28,22 @@ Ao acertar, explique por que está certo (critério/pergunta de bolso); se estiv
 - **Herdar:** peça que a pessoa localize/observe o próximo arquivo ou fluxo. Pergunte “onde você acha que a regra está?”; depois mostre evidência `arquivo:linha` versus hipótese. Não peça para alterar código durante a exploração.
 - **Operar:** pergunte antes de sugerir ferramenta. Exemplo: “Se o servidor cair às 3h, quem fica sabendo e quando?”. Ajude a definir evidência segura; não execute comandos ou alterações de produção.
 
+## Exercitar o pensamento em objetos
+
+Sempre que o problema naturalmente trouxer pessoas, coisas, regras ou interações, aproveite para praticar a descoberta de abstrações; não interrompa um passo simples só para inventar classes.
+
+1. Pergunte quem faz a ação na vida real.
+2. Pergunte que responsabilidade precisa existir no software e que informação ela protege.
+3. Convide a pessoa a sugerir candidatos: objeto persistido, valor, ator/papel, ação/controle transitório ou função/módulo suficiente.
+4. Pergunte se cada candidato precisa de identidade/histórico e se precisa sobreviver no banco. Mostre a diferença entre classe (molde) e objeto/instância (exemplar) na linguagem confirmada.
+5. Só então compare com outra opção; a resposta “não precisa de nova classe/objeto” também pode ser correta.
+
+Use o exemplo do estoquista: a pessoa conta e confere, mas isso não obriga a existir uma classe `Estoquista`; `Estoque` pode proteger saldo e produtos, enquanto uma ação transitória coordena o recebimento. Pergunte se um total geral pertence ao estoque ou a uma consulta de relatório. Aplique a distinção ao problema atual, não como teoria solta.
+
+## Diagramas Mermaid
+
+Mermaid é uma opção de visualização, não etapa obrigatória. Quando houver interação útil a enxergar, pergunte se a pessoa quer desenhar; se pedir explicitamente, gere. Em `--learn`, convide-a a propor atores, participantes e setas antes de completar o diagrama e explique cada símbolo na linguagem de referência. Use `references/diagramas.md`; nunca faça o diagrama sugerir que o ator humano é automaticamente uma classe.
+
 ## Checkpoints, chapéus e mudanças
 
 - A cada 2–3 decisões, peça que a pessoa explique com as próprias palavras o que decidiu e por quê; complete sem transformar em prova.

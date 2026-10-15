@@ -27,6 +27,17 @@
 | Fluxo crítico | Caminho tela → rota → regra → integração/persistência → resposta | Arquivo:linha confirmado | Hipótese |
 |---|---|---|---|
 
+### Objetos e responsabilidades
+
+| Candidato inferido/observado | Necessidade/responsabilidade | Ator humano ou software? | Persistência | Evidência (`arquivo:linha`) ou hipótese |
+|---|---|---|---|---|
+
+### Diagrama Mermaid (se ajudar)
+
+```mermaid
+<fluxo observado; marque hipóteses e nós confirmados>
+```
+
 ## Diagnóstico H4
 
 | Achado | Evidência ou hipótese | Impacto/risco | Frequência | Prioridade: dói / feia mas inofensiva |

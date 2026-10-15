@@ -27,11 +27,11 @@ Leia o repositório sem modificá-lo. Registre caminhos e versões observáveis;
 
 ### H2 — Domínio reverso
 
-Reconstrua as folhas e a linguagem real a partir das estruturas e fluxos encontrados. Procure conceitos que o código esconde: um status espalhado em strings, muitos booleanos, relação 1→N não representada, valor histórico referenciado onde deveria ser copiado, número sem unidade, pessoa confundida com papel. Use `references/dominio.md`; não imponha uma remodelagem por estilo.
+Reconstrua folhas, possíveis objetos/responsabilidades e a linguagem real a partir das estruturas e fluxos encontrados. Procure conceitos que o código esconde: um status espalhado em strings, muitos booleanos, relação 1→N não representada, valor histórico referenciado onde deveria ser copiado, número sem unidade, pessoa confundida com papel, ou classe que só existe porque um ator humano tem o mesmo nome. Uma linha/tabela pode ser evidência de persistência, mas não prova uma classe um-para-um. Use `references/dominio.md` e `references/objetos.md`; não imponha remodelagem por estilo.
 
 ### H3 — Fluxo de dados
 
-Escolha 2 ou 3 fluxos importantes para o negócio. Para cada um, trace tela → entrada/rota → regra/caso de uso → integração/persistência → resposta. Marque `arquivo:linha` para cada ponto confirmado e escreva “hipótese” quando a regra só puder ser inferida. Mostre onde a regra de fato mora e que outras entradas podem contorná-la.
+Escolha 2 ou 3 fluxos importantes para o negócio. Para cada um, trace tela → entrada/rota → regra/caso de uso → integração/persistência → resposta. Marque `arquivo:linha` para cada ponto confirmado e escreva “hipótese” quando a regra só puder ser inferida. Mostre onde a regra de fato mora, que outras entradas podem contorná-la e, se o desenho ajudar, ofereça um `sequenceDiagram` Mermaid sem apresentar uma hipótese como fato.
 
 ### H4 — Diagnóstico
 

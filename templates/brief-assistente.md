@@ -20,6 +20,11 @@
 - Tipos/folhas, campos e referências:
 - Estados e transições:
 
+### Objetos e responsabilidades
+
+| Objeto/candidato | Necessidade/responsabilidade | Ator ou software | Persistente/transitório | Evidência/justificativa |
+|---|---|---|---|---|
+
 ## Regras e contrato
 
 | Regra | Dono |
@@ -37,6 +42,14 @@
 ## Decisões tomadas
 
 Resumo dos Cartões: escolha, motivo, custo e reversibilidade.
+
+## Diagrama Mermaid (opcional)
+
+Inclua-o se foi pedido ou se tornou a interação mais clara; marque hipóteses e não represente uma pessoa como classe sem motivo de domínio.
+
+```mermaid
+<diagrama, se aplicável>
+```
 
 ## Critérios de aceite
 

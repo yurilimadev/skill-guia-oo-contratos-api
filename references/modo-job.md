@@ -15,7 +15,7 @@ A skill propõe e registra; a pessoa valida decisões de negócio e portas de um
 ## Início por entrada
 
 - **Construir:** após triagem, entregue problema e plano da etapa atual. Proponha modelagem e teste de estresse de domínio em tabela; faça cartões para escolhas relevantes. Não pule etapas; em pedido pequeno, condense 8–10 em checklist.
-- **Herdar:** comece por inventário/raio-X e evidências observadas, não refatoração. Diagnostique por risco × frequência e indique arquivos/linhas; proponha passo incremental pronto, mas não mexa no sistema sem solicitação explícita.
+- **Herdar:** comece por inventário/raio-X e evidências observadas, não refatoração. Diagnostique por risco × frequência e indique arquivos/linhas; separe ator, objeto/candidato, armazenamento e responsabilidade; proponha passo incremental pronto, mas não mexa no sistema sem solicitação explícita.
 - **Operar:** comece pela tabela de evidências dos itens pertinentes. Só depois atribua nível de maturidade. Proponha o próximo passo menor e seguro, sem executar ação produtiva sem aprovação.
 
 ## Ritmo e limites
@@ -26,6 +26,8 @@ A skill propõe e registra; a pessoa valida decisões de negócio e portas de um
 - Se a decisão travar três vezes, apresente o impasse, opções e informação que falta; não faça perguntas circulares.
 - Usuário avançado recebe explicação menor, nunca evidência ou crítica menor.
 - Só o usuário troca entrada, modo ou idioma de referência. Preserve Ficha/Raio-X/Operação, decisões e suposições ao continuar.
+- Se um diagrama ajudar a resumir interações, ofereça-o; gere sempre se solicitado. Em `--job`, desenhe a visão curta e marque quais nós/setas são confirmados ou hipotéticos em Herdar. Veja `references/diagramas.md`.
+- Ao apresentar uma proposta, diga quais candidatos são persistentes e quais são objetos de controle/valores transitórios, sem presumir uma linha de banco por objeto.
 
 ## Fechamento
 
