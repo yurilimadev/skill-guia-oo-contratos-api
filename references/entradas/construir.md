@@ -40,7 +40,7 @@ Entenda o processo real, não a tela imaginada. Se história e participantes já
 
 ### Etapa 2 — caneta × papel
 
-Quem segura a caneta vira ator/permissão; o que fica escrito é dado; assunto com ficha própria vira referência. Compare pessoa e papel e perceba se palavras mudam de sentido entre setores. Não invente quem aprova: mapeie chapéus e pergunte quem os veste.
+Quem segura a caneta vira ator/permissão; o que fica escrito é dado; assunto com ficha própria vira referência. Compare pessoa e papel e perceba se palavras mudam de sentido entre setores. **O ator humano não vira automaticamente uma classe**: a pessoa inicia ações no processo real; identifique separadamente qual responsabilidade o software precisa assumir. Não invente quem aprova: mapeie chapéus e pergunte quem os veste.
 
 ### Etapa 3 — campos da folha
 
@@ -50,7 +50,7 @@ Classifique campo a campo:
 - **assinatura**: quem agiu; quando é identidade autenticada, vem da sessão;
 - **estado**: situação atual, se houver ciclo de vida.
 
-Pergunte identidade × valor, cardinalidade (um ou vários?), cópia × referência e unidade de medida. O que tem vida própria pode virar módulo; item que só existe no registro-pai pode ficar junto. Essas são escolhas com trade-off, não regras automáticas. Indique Domínio, Dono do processo e Dados como chapéus usuais.
+Pergunte identidade × valor, cardinalidade (um ou vários?), cópia × referência e unidade de medida. Gere candidatos a objeto a partir de necessidades, responsabilidades, dados e interações; não crie uma classe por substantivo nem por linha de tabela. Um objeto persistido, uma estrutura de valor e um coordenador transitório cumprem papéis diferentes. O que tem vida própria pode virar módulo; item que só existe no registro-pai pode ficar junto. Essas são escolhas com trade-off, não regras automáticas. Leia `references/objetos.md`. Indique Domínio, Dono do processo e Dados como chapéus usuais.
 
 ### Etapa 4 — estados
 
@@ -68,7 +68,9 @@ Defina recurso (substantivo na URL), verbo HTTP, endpoint, DTO de entrada e saí
 
 ### Etapa 7 — ação
 
-Descreva a sequência que cumpre o pedido. Um método/regra lida com responsabilidade localizada; uma ação/caso de uso coordena vários substantivos. Comece pelo módulo mais alterado, mas mude o dono se isso reduzir acoplamento. Persistência busca e grava; a regra de negócio fica na camada responsável pelo domínio.
+Descreva a sequência que cumpre o pedido. Um método/regra lida com responsabilidade localizada; uma ação/caso de uso coordena vários substantivos e pode ser objeto transitório sem linha de banco. Comece pelo módulo mais alterado, mas mude o dono se isso reduzir acoplamento. Persistência busca e grava; a regra de negócio fica na camada responsável pelo domínio.
+
+Se o fluxo envolver várias pessoas/componentes, ofereça um diagrama Mermaid conforme `references/diagramas.md`; em `--learn`, peça à pessoa para sugerir atores, objetos e setas antes de desenhá-lo.
 
 ### Etapa 8 — dados e consistência
 

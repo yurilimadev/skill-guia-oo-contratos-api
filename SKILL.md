@@ -1,7 +1,7 @@
 ---
 name: folha-ao-codigo
-description: "Guia Full Cycle em português para construir funcionalidades, entender/refatorar sistemas existentes e melhorar a operação em produção; use também para avaliar propostas de IA ou quando o usuário pedir --learn ou --job. Conduz as entradas Construir, Herdar e Operar com evidências, trade-offs, documentação viva e crítica explícita."
-version: 3.0.0
+description: "Guia Full Cycle em português para construir funcionalidades, entender/refatorar sistemas existentes e melhorar a operação em produção; use também para modelar objetos, criticar propostas de IA, criar diagramas Mermaid ou quando o usuário pedir --learn ou --job. Conduz Construir, Herdar e Operar com evidências, trade-offs e documentação viva."
+version: 3.1.0
 ---
 
 # Da Folha ao Código — Full Cycle
@@ -44,6 +44,12 @@ As entradas alimentam umas às outras: o que Operar descobre vira prioridade em 
 
 Para dúvida isolada de sintaxe ou ajuste de UI pequeno e reversível, responda diretamente em vez de impor o ciclo; entre em Herdar/Operar se o problema revelar risco sistêmico, recorrência, dúvida de domínio ou impacto em produção.
 
+## Objetos e interações
+
+Qualquer conceito **pode** ser representado por uma abstração/objeto se houver uma necessidade, mas não transforme todo substantivo em classe nem toda linha de banco em objeto de domínio. Separe ator humano, responsabilidade do software, objeto de modelagem, instância/classe da linguagem e dado persistido. Leia [`references/objetos.md`](references/objetos.md); pratique essa descoberta em `--learn` sempre que o problema oferecer uma oportunidade natural.
+
+Diagramas Mermaid são opcionais nos dois modos: crie-os sempre que a pessoa pedir; caso contrário, ofereça quando muitos participantes, componentes, decisões ou transições tornarem a interação difícil de seguir. Leia [`references/diagramas.md`](references/diagramas.md). Em `--learn`, construa o desenho com a pessoa; em `--job`, ofereça a versão mais curta que ajude e só a inclua se a pessoa aceitar. Não force um desenho em fluxo trivial.
+
 ## Modos
 
 - `--learn`: aprender fazendo nas três entradas. Em Herdar e Operar, comece por perguntas e evidências; use a escada de ajuda. Leia [`references/modo-learn.md`](references/modo-learn.md).
@@ -69,6 +75,8 @@ Leia só o material necessário ao passo atual:
 | Necessidade | Referência |
 |---|---|
 | termos e relações entre folha, contrato e dependências | [`references/vocabulario.md`](references/vocabulario.md) |
+| objeto, classe, ator humano e persistência | [`references/objetos.md`](references/objetos.md) |
+| diagramas de fluxo/interação em Mermaid | [`references/diagramas.md`](references/diagramas.md) |
 | domínio em Construir/Herdar | [`references/dominio.md`](references/dominio.md) |
 | trade-offs técnicos e de produto | [`references/trade-offs.md`](references/trade-offs.md) |
 | linguagem alvo ↔ linguagem de referência | [`references/linguagens.md`](references/linguagens.md) |

@@ -43,6 +43,11 @@ Não invente nomes; use os chapéus de `references/chapeus.md` e pergunte quem o
 - **Cenários do teste de estresse:** <3–5; pedido pequeno no máximo 2>
 - **Custo de mudança e gatilho para revisitar:**
 
+### Objetos/abstrações candidatas
+
+| Candidato | Necessidade/responsabilidade | Ator humano ou parte do software? | Persistente ou transitório? | Por que objeto, classe, função ou módulo? |
+|---|---|---|---|---|
+
 ### Campos da folha principal
 
 | Campo | Referência/simples/assinatura/estado | Quem fornece? | Observações |
@@ -96,6 +101,13 @@ Então <resultado observável para a pessoa> (<detalhe técnico opcional>)
 - Plano de entrega:
 - Como desfazer/reverter:
 - Compromisso de retorno em produção: quando, como e qual evidência confirma cada critério da etapa 0 (alimentará `docs/operacao.md`):
+
+### Diagrama Mermaid (opcional)
+
+- Tipo e pergunta que o diagrama responde (sequência/fluxo/classes/estados/dados):
+- Código Mermaid:
+- Confirmado versus hipótese:
+- Incluído? sim / não necessário / oferecido e recusado
 
 ## Suposições
 

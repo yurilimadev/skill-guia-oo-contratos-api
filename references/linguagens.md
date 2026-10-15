@@ -7,6 +7,8 @@ Na primeira vez que um conceito da linguagem alvo aparecer, explique em uma linh
 | Conceito | TypeScript | Python | Java | C# | Go | PHP |
 |---|---|---|---|---|---|---|
 | Molde/estrutura de dados | `type`, `interface`, `class` | `TypedDict`, `dataclass`, classe/Pydantic | `record`, classe | `record`, classe | `struct` | classe |
+| Objeto/instância | valor/objeto runtime; instância se criado por `class` | valores são objetos na linguagem; instância de classe é um caso | instância de `class`/`record` | instância de `class`/`record` | valor de um tipo (por exemplo, `struct`); não precisa ser classe | instância de `class` |
+| Objeto/instância | valor/objeto runtime; instância se criado por `class` | valores são objetos na linguagem; instância de classe é um caso | instância de `class`/`record` | instância de `class`/`record` | valor de um tipo (por exemplo, `struct`); não precisa ser classe | instância de `class` |
 | Estados/valores fechados | união discriminada, `enum` | `Enum` / `StrEnum` | `enum` | `enum` | tipo definido + constantes; validação explícita | `enum` (8.1+) ou constantes |
 | Módulo/pasta | diretório e módulo | pacote (`__init__`) | `package` | namespace | `package` | `namespace` |
 | Importar/visibilidade | `import` / `export` | `import`; visibilidade por convenção/API | `import`; modificadores de acesso | `using`; modificadores de acesso | `import`; exporta nome iniciado em maiúscula | `use`; visibilidade do membro |

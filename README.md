@@ -1,6 +1,6 @@
 # Da Folha ao Código — Full Cycle
 
-Skill em português para construir, herdar e operar sistemas. Ajuda a transformar domínio em decisões, entender o que já existe, proteger mudanças em produção e criticar propostas de IA. O método mantém a metáfora do papel e as sete etapas originais dentro do fluxo de Construir.
+Skill em português para construir, herdar e operar sistemas. Ajuda a transformar domínio em decisões, descobrir objetos e responsabilidades, visualizar interações com Mermaid, entender o que já existe, proteger mudanças em produção e criticar propostas de IA. O método mantém a metáfora do papel e as sete etapas originais dentro do fluxo de Construir.
 
 ## Instalação
 
@@ -36,8 +36,12 @@ Linguagem alvo: TypeScript do projeto
 Linguagem de referência: Python
 Quero modelar a divergência no recebimento de estoque. Hoje a equipe confere itens
 e anota diferenças no papel. Quero descobrir o que deve ser registrado antes de
-escrever código. Conduza uma etapa por vez.
+escrever código. Ajude-me a separar o ator humano dos objetos e responsabilidades
+do software. Se ajudar, desenhe um diagrama Mermaid do fluxo; não transforme cada
+substantivo em classe. Conduza uma etapa por vez.
 ```
+
+Para pedir um desenho direto, acrescente, por exemplo: “Gere um `sequenceDiagram` Mermaid do fluxo de recebimento; mostre o estoquista como ator separado das responsabilidades do software e marque o que ainda é hipótese.” Em `--learn`, a skill pode ajudar você a escolher atores, objetos e setas antes de completar o desenho.
 
 ```text
 Entrada: Herdar · --job
@@ -60,6 +64,12 @@ Se ainda não souber qual entrada escolher, descreva o problema: a skill sugere 
 O ponto de partida pode ser qualquer etapa e qualquer estado do projeto. Se `docs/` existir, a skill lê o diário, operação e decisões relevantes antes de perguntar; documentos vivos são atualizados, não recriados. A skill oferece escrever no projeto, mas só faz isso com permissão.
 
 Herdar é somente leitura por padrão. Operar não executa comandos nem muda DNS, servidor ou banco sem aprovação explícita. Toda evidência distingue “não existe”, “existe, não verificado” e “existe e verificado”.
+
+## Mudanças — versão 3.1.0
+
+- Explica objetos, classes/instâncias, atores humanos e responsabilidades do software; diferencia objetos persistidos de controles transitórios.
+- Exercita a descoberta de objetos em `--learn` sem transformar cada substantivo em classe.
+- Oferece diagramas Mermaid em `--learn` e `--job` quando forem pedidos ou ajudarem a entender interações.
 
 ## Mudanças — versão 3.0.0
 

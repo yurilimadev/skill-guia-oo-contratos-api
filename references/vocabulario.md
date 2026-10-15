@@ -24,6 +24,8 @@ São lentes de modelagem, não uma taxonomia universal. Se um substantivo tiver 
 
 **Lado de dentro (implementação):** tipo/modelo (molde da folha), objeto (folha preenchida), estado (situação de um compromisso), regra (condição permitida/proibida), método (verbo de uma responsabilidade), ação/caso de uso (verbo que coordena partes) e persistência (busca e grava; decisões de negócio ficam em componentes do domínio por padrão).
 
+“Objeto” pode significar uma abstração do domínio ou, em sentido mais técnico, uma instância em execução; “classe” é um molde em linguagens que usam classes. Um ator humano da história não vira automaticamente classe: descubra qual responsabilidade precisa existir no software. Nem objeto precisa de linha própria no banco; uma linha também não determina sozinha uma classe. Veja [`objetos.md`](objetos.md).
+
 ## Viagem do dado
 
 1. A tela monta o DTO de entrada.

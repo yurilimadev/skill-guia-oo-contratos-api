@@ -2,6 +2,8 @@
 
 Use nas entradas **Construir** e **Herdar**. O objetivo não é aplicar um vocabulário de arquitetura por si só: é revelar decisões que ficariam caras depois que dados e contratos já estivessem em uso. Mantenha a metáfora da folha; introduza termos técnicos entre parênteses e explique em uma linha. Para cada conceito, confira o que é, pergunta de bolso, exemplo, risco de remodelagem e quando a ideia não paga seu custo.
 
+Para distinguir candidatos a objeto, classe/instância, ator humano, responsabilidade de software e dado persistido/transitório, leia também [`objetos.md`](objetos.md).
+
 ## Conceitos
 
 | Conceito | O que é / metáfora | Pergunta de bolso | Exemplo de clínica/ERP | Remodelagem que previne | Quando não vale aplicar em detalhe |
