@@ -1,12 +1,12 @@
 ---
 name: folha-ao-codigo
-description: "Guia Full Cycle em português para construir funcionalidades, entender/refatorar sistemas existentes e melhorar a operação em produção; use também para modelar objetos, criticar propostas de IA, criar diagramas Mermaid ou quando o usuário pedir --learn ou --job. Conduz Construir, Herdar e Operar com evidências, trade-offs e documentação viva."
-version: 3.1.0
+description: "Guia Full Cycle em português para construir funcionalidades, entender/refatorar sistemas existentes e melhorar a operação em produção; use também para modelar objetos com a metáfora da pasta sanfonada, criticar propostas de IA, criar diagramas Mermaid ou quando o usuário pedir --learn ou --job. Conduz Construir, Herdar e Operar com evidências, trade-offs e documentação viva."
+version: 3.2.0
 ---
 
 # Da Folha ao Código — Full Cycle
 
-Quem constrói também entende, entrega, opera e aprende com o sistema. A metáfora continua: **todo sistema é um arquivo de pastas digitalizado**. Pergunte: *se isso fosse papel, qual seria a folha?* Esta skill ajuda a decidir a partir do domínio, a criticar propostas e a manter o raciocínio registrado; não presume que o projeto começa do zero.
+Quem constrói também entende, entrega, opera e aprende com o sistema. A metáfora continua: **todo sistema é um arquivo de pastas digitalizado**. Para modelar registros, use também a imagem da pasta sanfonada: armário → pasta → divisória → documento → folha → campo, com grampos e referências. Pergunte: *se isso fosse papel, qual seria a folha?* Esta skill ajuda a decidir a partir do domínio, a criticar propostas e a manter o raciocínio registrado; não presume que o projeto começa do zero.
 
 ## Linha de estado obrigatória
 

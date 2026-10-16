@@ -50,7 +50,7 @@ Classifique campo a campo:
 - **assinatura**: quem agiu; quando é identidade autenticada, vem da sessão;
 - **estado**: situação atual, se houver ciclo de vida.
 
-Pergunte identidade × valor, cardinalidade (um ou vários?), cópia × referência e unidade de medida. Gere candidatos a objeto a partir de necessidades, responsabilidades, dados e interações; não crie uma classe por substantivo nem por linha de tabela. Um objeto persistido, uma estrutura de valor e um coordenador transitório cumprem papéis diferentes. O que tem vida própria pode virar módulo; item que só existe no registro-pai pode ficar junto. Essas são escolhas com trade-off, não regras automáticas. Leia `references/objetos.md`. Indique Domínio, Dono do processo e Dados como chapéus usuais.
+Pergunte identidade × valor, cardinalidade (um ou vários?), cópia × referência e unidade de medida. Use a pasta sanfonada para localizar documento, folha, campo, grampo e referência. Gere candidatos a objeto a partir de necessidades, responsabilidades, dados e interações; não crie uma classe por substantivo nem por linha de tabela. Um objeto persistido, uma estrutura de valor e um coordenador transitório cumprem papéis diferentes. O que tem vida própria pode virar módulo; item que só existe no registro-pai pode ficar junto. Essas são escolhas com trade-off, não regras automáticas. Leia `references/objetos.md`. Indique Domínio, Dono do processo e Dados como chapéus usuais.
 
 ### Etapa 4 — estados
 

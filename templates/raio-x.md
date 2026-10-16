@@ -17,6 +17,9 @@
 ## Mapa do domínio H2
 
 - Glossário/contextos:
+- Pasta sanfonada: armário/container → pasta/área → divisória/tipo → documento → folhas → campos:
+- Folhas grampeadas versus referências para documentos independentes:
+- Verso: carimbos técnicos versus dependências de negócio escondidas:
 - Folhas, identidades/valores, cardinalidade/unidades:
 - Compromissos, fatos, estados e eventos:
 - Regras/invariantes e papéis:
