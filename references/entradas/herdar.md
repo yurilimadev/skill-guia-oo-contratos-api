@@ -27,7 +27,7 @@ Leia o repositório sem modificá-lo. Registre caminhos e versões observáveis;
 
 ### H2 — Domínio reverso
 
-Reconstrua folhas, possíveis objetos/responsabilidades e a linguagem real a partir das estruturas e fluxos encontrados. Procure conceitos que o código esconde: um status espalhado em strings, muitos booleanos, relação 1→N não representada, valor histórico referenciado onde deveria ser copiado, número sem unidade, pessoa confundida com papel, ou classe que só existe porque um ator humano tem o mesmo nome. Uma linha/tabela pode ser evidência de persistência, mas não prova uma classe um-para-um. Use `references/dominio.md` e `references/objetos.md`; não imponha remodelagem por estilo.
+Reconstrua armário/pastas/documentos/folhas, possíveis objetos/responsabilidades e a linguagem real a partir das estruturas e fluxos encontrados. Procure conceitos que o código esconde: um status espalhado em strings, muitos booleanos, relação 1→N não representada, valor histórico referenciado onde deveria ser copiado, número sem unidade, pessoa confundida com papel, ou classe que só existe porque um ator humano tem o mesmo nome. Uma linha/tabela pode ser evidência de persistência, mas não prova uma classe um-para-um. Use `references/dominio.md` e `references/objetos.md`; não imponha remodelagem por estilo.
 
 ### H3 — Fluxo de dados
 

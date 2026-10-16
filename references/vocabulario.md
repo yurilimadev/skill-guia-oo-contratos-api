@@ -6,6 +6,7 @@
 - **Caneta × papel**: quem segura a caneta (usuário que age) representa ator/permissão; o que está escrito no papel vira dado.
 - **Assunto**: o que está na folha e tem uma ficha própria em outra pasta; a folha aponta para ele (por exemplo, `unidadeId`).
 - **Vida própria × pedaço**: se algo pode existir sozinho, um módulo próprio é um padrão razoável; se só vive dentro de outro registro, costuma ficar embutido (como item do pedido). Compare custos antes de dividir ou juntar.
+- **Pasta sanfonada**: armário → pasta → divisória → documento → folha → campo; detalhes grampeados dependem do documento, referências apontam para fichas independentes. É uma lente de modelagem, não uma topologia física obrigatória.
 
 ## Quatro tipos de substantivo
 

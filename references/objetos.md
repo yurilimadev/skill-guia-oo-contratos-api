@@ -2,6 +2,34 @@
 
 Use esta referência para ajudar a pessoa a imaginar abstrações de software sem transformar cada substantivo em classe. A ideia pedagógica é **qualquer coisa pode ser representada como objeto se houver uma necessidade clara**; isso não significa que toda coisa precise de objeto, classe ou linha no banco. Primeiro descubra a necessidade e a responsabilidade; depois escolha a forma da linguagem.
 
+## Pasta sanfonada: partir da folha para enxergar o sistema
+
+Esta metáfora dá uma imagem concreta ao “arquivo de pastas digitalizado”. Use-a como **mapa inicial para sistemas de negócio**, sem exigir correspondência literal nem supor que toda solução é um banco relacional.
+
+| Peça da pasta | Leitura inicial no sistema | Pergunta de bolso / limite |
+|---|---|---|
+| **Armário** | No desenho, representa o banco de dados ou um contêiner de documentos | É um contêiner de dados, não necessariamente o sistema inteiro: pode haver vários bancos, serviços e integrações |
+| **Pasta** | Uma área do negócio, como Estoque | “Que assuntos mudam juntos?” Uma pasta não define automaticamente um bounded context ou um serviço |
+| **Divisória** | Família/tipo de documento (Compras, Fornecedores, Movimentações); etiqueta colorida é só rótulo | “Que tipo de documento procuro aqui?” A divisória organiza; não é, por si só, nicho de dados nem fronteira física |
+| **Documento** | Registro reconhecível que alguém consulta por um identificador e entende como unidade | “Alguém pede pelo número e esse registro tem uma história própria?” Se não, talvez seja folha/dado de outro documento |
+| **Folha principal** | Identidade e campos que dão sentido ao documento | “Qual é a capa que explica o que este documento representa?” |
+| **Folha grampeada** | Detalhe que só tem sentido dentro do documento principal (por exemplo, itens de uma compra) | “Sem a capa, essa folha ainda existe para o negócio?” Se tiver ciclo/história própria, repense o grampo |
+| **Campo** | Informação simples ou referência escrita na folha | “É dado do negócio, assinatura, estado ou link para outra ficha?” |
+| **Grampo** | Composição/posse: detalhe acompanha o ciclo do documento principal | Anular a compra pode anular os itens que só existem nela; não apague histórico obrigatório sem regra explícita |
+| **Referência** | Link entre documentos independentes (compra → fornecedor) | Cancelar a compra não apaga o fornecedor; a referência aponta, mas não grampeia |
+| **Verso** | Metadado gerido pelo sistema ou informação de negócio ainda não modelada na frente | “É só carimbo técnico ou o negócio depende disso?” Se o negócio depende, considere campo/referência/regra explícitos |
+
+### Testes de bolso da imagem
+
+- **É documento?** Alguém pede pelo número e o registro vive/é tratado como um todo?
+- **Grampo ou referência?** Sem a folha principal, a de detalhe perde sentido? Sim tende a grampo; não tende a referência. Confira também quem possui o ciclo de vida, histórico e cancelamento.
+- **Anotação no verso:** é carimbo do sistema (id, criado em/por, chave de idempotência) ou o negócio depende dela? Se depende, não a esconda como metadado técnico.
+- **Loja:** em dados compartilhados costuma ser campo/referência do documento, não nicho do armário. Banco por loja pode ser uma decisão válida de isolamento/tenant, mas é uma fronteira de implantação e operação; não generalize a regra “sempre campo”.
+
+### Onde a metáfora para
+
+Folhas não interagem sozinhas na vida real nem no modelo: uma pessoa, evento ou rotina inicia uma ação. A pasta mostra estrutura e vínculos; um diagrama de sequência pode mostrar quem inicia e como as responsabilidades do software colaboram. Não confunda `ator` humano com classe/objeto nem uma referência entre folhas com uma chamada/comportamento. Para Mermaid, consulte `diagramas.md`.
+
 ## Três sentidos que não devem se misturar
 
 - **Coisa do domínio:** algo de que as pessoas falam, como produto, saldo, recebimento, pessoa ou política.

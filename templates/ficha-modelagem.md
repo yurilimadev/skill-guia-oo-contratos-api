@@ -35,6 +35,7 @@ Não invente nomes; use os chapéus de `references/chapeus.md` e pergunte quem o
 ### Modelo de domínio
 
 - **Glossário/contextos:**
+- **Mapa da pasta sanfonada (armário/pasta/divisória/documento/folhas):**
 - **Identidade × valor:**
 - **Cardinalidades e unidades:**
 - **O que é copiado e o que é referência (incluindo histórico):**
