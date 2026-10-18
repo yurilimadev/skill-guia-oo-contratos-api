@@ -1,4 +1,6 @@
-# Trade-offs e Cartão de Decisão
+# Trade-offs e argumentos
+
+Este arquivo é o catálogo de opções para modelagem, organização, contrato e dados. Perguntas para descobrir a decisão estão em [`decisoes.md`](decisoes.md); a conversa que leva a pessoa à escolha está em [`socratico.md`](socratico.md). Decisões de código (função vs. classe, abstração, biblioteca) ficam para a fase de código.
 
 ## Critérios para comparar opções
 
@@ -22,9 +24,20 @@ Explique ganho e custo de cada opção em linguagem simples. A solução recomen
 
 Rótulo da porta não substitui análise: confirme impacto, alcance, migração e recuperação. Para cada decisão, use [`../templates/cartao-decisao.md`](../templates/cartao-decisao.md).
 
+## Argumento de uma decisão
+
+Toda opção é apresentada no mesmo formato, para que a pessoa possa contestar parte por parte:
+
+1. **Afirmação:** o que estamos decidindo.
+2. **Por que esta opção vence aqui:** o critério principal e o contexto.
+3. **Alternativa mais forte:** a melhor opção que perde, e por quê.
+4. **O que derrubaria a escolha:** a condição concreta que muda a resposta.
+
+Se a pessoa não consegue preencher o item 4, a decisão ainda não está madura; volte às perguntas de [`socratico.md`](socratico.md).
+
 ## Catálogo de decisões recorrentes
 
-Cada linha é um ponto de partida, não prescrição universal.
+Cada entrada é um ponto de partida, não prescrição universal.
 
 ### 1. Pastas por substantivo vs. por camada
 
@@ -61,45 +74,24 @@ Cada linha é um ponto de partida, não prescrição universal.
 - **Custo de seguir em ambos:** regra de formato simples pode ser repetida; mantenha contrato/testes para reduzir divergência.
 - **Custo de validar só na tela:** outras telas, scripts ou chamadas diretas podem gravar dados inválidos ou contornar permissão.
 
-### 6. Função vs. classe
-
-- **Padrão:** função para transformação ou ação simples, explícita e sem estado duradouro.
-- **Quando quebrar:** classe pode ajudar quando há estado com ciclo de vida, várias implementações intercambiáveis ou dependências que precisam ser encapsuladas.
-- **Custo de seguir:** funções podem receber vários parâmetros ou repetir contexto.
-- **Custo de não seguir:** classes e hierarquias podem adicionar indireção, estado implícito e cerimônia sem benefício.
-
-### 7. Banco relacional vs. documento
+### 6. Banco relacional vs. documento
 
 - **Padrão:** relacional quando relações, integridade referencial, transações e consultas cruzadas são centrais.
 - **Quando quebrar:** documento pode se ajustar melhor quando agregado é lido/escrito como unidade e esquema flexível é vantagem real.
 - **Custo de relacional:** migrações e modelagem explícita de relações.
 - **Custo de documento:** relações e consistência entre documentos podem exigir duplicação, reconciliação e lógica adicional.
 
-### 8. Síncrono vs. fila/job em segundo plano
+### 7. Síncrono vs. fila/job em segundo plano
 
 - **Padrão:** síncrono para trabalho curto que precisa de resultado imediato.
 - **Quando quebrar:** fila/job quando trabalho é demorado, precisa de retentativa, tolera resposta posterior ou há pico de volume.
 - **Custo de síncrono:** latência e dependência da disponibilidade de tudo na chamada.
 - **Custo de fila:** operação, monitoramento, estado eventual, idempotência e experiência de usuário assíncrona.
 
-### 9. Criar abstração agora vs. esperar a terceira repetição (YAGNI)
-
-- **Padrão:** mantenha explícito até a repetição revelar uma forma estável; a terceira ocorrência é um sinal útil, não uma lei.
-- **Quando quebrar:** segurança, contrato irreversível, requisito comum comprovado ou custo alto de migração pode justificar uma abstração antes.
-- **Custo de esperar:** duplicação temporária e refatoração depois.
-- **Custo de abstrair cedo:** abstração baseada em suposição, API difícil de desfazer e custo de aprendizagem.
-
-### 10. Biblioteca pronta vs. código próprio
-
-- **Padrão:** biblioteca mantida para problema complexo e comum, se licença, segurança, manutenção e compatibilidade servirem.
-- **Quando quebrar:** código próprio pequeno e estável pode ser melhor quando dependência traz superfície maior do que o problema.
-- **Custo da biblioteca:** atualizações, dependências transitivas, curva de uso e risco de abandono.
-- **Custo de código próprio:** manutenção, casos de borda e segurança ficam por conta do time.
-
 ## Transformar afirmações absolutas em padrões
 
 Ao revisar o método, procure “sempre”, “nunca” e “só”. Para escolhas técnicas, converta-os em: **padrão recomendado → quando quebrar → custo de seguir → custo de não seguir**. Preserve como regra de segurança apenas o que realmente for inegociável no contexto e diga por que; não chame uma preferência de lei.
 
-## Diário
+## Registro
 
-Registre opções, escolha, ganho, custo, reversibilidade, gatilho para revisitar e modo em que foi decidida. Em `--learn`, espere a reflexão do usuário antes de apresentar a recomendação; em `--job`, proponha uma opção e o trade-off em 1–2 frases.
+Cada decisão tomada com estas opções vai para o cartão e para o diário, conforme [`registros.md`](registros.md). Em `--learn`, a pessoa escreve a razão antes de a skill apresentar a recomendação; em `--job`, a skill apresenta o argumento completo e a pessoa responde com a contraprova.

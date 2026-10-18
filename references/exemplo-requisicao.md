@@ -58,32 +58,32 @@ Cada regra adicional da etapa 5 deve ganhar um critério. Se não houver estoque
 
 ### Decisão: atender como ação ou editar status
 
-- **Opções:** `POST /requisicoes/{id}/atendimento` ou `PATCH` com status `atendida`.
-- **Escolha provisória:** sub-recurso POST, porque atendimento verifica estoque e cria movimentação.
-- **Ganho:** a rota nomeia o que aconteceu e permite validar a transição e registrar efeitos.
-- **Custo:** uma rota e um DTO de ação a mais.
+- **Decisão:** atendimento como sub-recurso `POST /requisicoes/{id}/atendimento`, não `PATCH` de status.
+- **Minha razão (exemplo — a pessoa escreve a própria):** atender verifica estoque e cria movimentação; um `PATCH` de status deixaria esses efeitos sem lugar claro.
+- **Alternativa descartada e por quê:** `PATCH` com status `atendida`, porque pularia a verificação de saldo e a movimentação.
+- **O que me faria mudar de ideia:** se atendimento deixar de ter efeitos além de editar um campo.
+- **Crítica da skill:** a razão depende de "atendimento tem efeitos". Isso vale só se nenhum outro caminho alterar o estoque sem passar por esta ação.
 - **Reversível?** Duas vias enquanto o contrato não estiver publicado; uma via após clientes dependerem dele.
-- **Quando revisitar:** se atendimento deixar de ter efeitos além de editar um campo.
 - **Modo:** job (exemplo didático).
 
 ### Decisão: DTO separado ou tipo interno
 
-- **Opções:** aceitar a própria entidade ou receber DTO específico.
-- **Escolha provisória:** DTO separado; id, estado, data e autor são dados sob controle do servidor.
-- **Ganho:** o cliente só envia os campos permitidos.
-- **Custo:** traduzir entrada/saída.
+- **Decisão:** DTO específico para entrada e saída, em vez de aceitar a entidade inteira.
+- **Minha razão (exemplo):** id, estado, data e autor são controlados pelo servidor; o cliente não deve conseguir enviá-los.
+- **Alternativa descartada e por quê:** reutilizar a entidade, porque ela expõe campos que o cliente não deve escrever.
+- **O que me faria mudar de ideia:** se for um protótipo interno, sem exposição nem campos de servidor.
+- **Crítica da skill:** a razão é segurança, mas o DTO também custa tradução em duas direções. Quanto isso pesa no seu caso?
 - **Reversível?** Duas vias antes de publicar o contrato.
-- **Quando revisitar:** se for protótipo estritamente interno, sem exposição nem metadado de servidor.
 - **Modo:** job (exemplo didático).
 
 ### Decisão: item com módulo próprio ou parte da requisição
 
-- **Opções:** módulo independente ou item embutido.
-- **Escolha provisória:** item permanece dentro da requisição porque só existe nesse pedido neste exemplo.
-- **Ganho:** modelo direto, sem abstração adicional.
-- **Custo:** consultas e reuso independente de itens ficam limitados.
+- **Decisão:** o item fica dentro da requisição, sem módulo próprio.
+- **Minha razão (exemplo):** o item só existe dentro desta requisição; sem ela, não tem sentido.
+- **Alternativa descartada e por quê:** módulo independente de itens, porque não há uso fora do pedido que justifique a separação.
+- **O que me faria mudar de ideia:** se item passar a ter ciclo de vida próprio ou for consultado fora do pedido.
+- **Crítica da skill:** você sabe se algum relatório vai consultar itens sem passar pela requisição? Se sim, o argumento enfraquece.
 - **Reversível?** Duas vias enquanto não houver uso independente; migração mais cara depois de persistir referências externas.
-- **Quando revisitar:** se item de requisição passar a ter ciclo de vida próprio ou for referenciado fora do pedido.
 - **Modo:** learn (exemplo didático).
 
 ## Consistência, falhas e pontos em aberto

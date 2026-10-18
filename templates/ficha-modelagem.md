@@ -91,9 +91,9 @@ Escreva “Nenhuma.” se não houver; faça uma última busca por lacunas. Não
 
 Escreva “Nenhuma.” se não houver.
 
-## Diário de Decisões
+## Diário de bordo e decisões
 
-Inclua um Cartão de Decisão por decisão relevante usando [`cartao-decisao.md`](cartao-decisao.md). Mantenha opções, custos, reversibilidade, gatilho de revisão e modo.
+Inclua um Cartão de Decisão por decisão relevante usando [`cartao-decisao.md`](cartao-decisao.md), com a razão escrita pela pessoa antes da crítica da skill. Registre cada decisão no diário com data e hora e, quando atender aos três critérios, crie um ADR, conforme [`../references/registros.md`](../references/registros.md).
 
 ## Pastas e arquivos sugeridos
 

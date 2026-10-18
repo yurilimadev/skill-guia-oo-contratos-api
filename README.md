@@ -22,6 +22,15 @@ O comando usa o CLI `skills`, que instala skills em agentes compatíveis. Para e
 
 Inclua a flag de modo no pedido e confirme a linguagem/stack. Se houver manifests no projeto, a skill sugere o que detectou e pede confirmação antes de decidir. Ela começa cada resposta com uma linha de estado, por exemplo: `Modo: learn · Etapa 3/10 · Campos da folha`.
 
+Regras de conversa:
+
+- **Sua razão primeiro.** Cada decisão começa com a razão escrita por você; a skill só comenta depois.
+- **Um assunto por vez.** Se a mensagem misturar assuntos técnicos e teóricos, a skill lista e pergunta por qual começar.
+- **Checagem de entendimento.** A skill diz o que entendeu da sua decisão e pergunta se confere.
+- **Escopo.** Modelagem e organização agora. Perguntas de código (`if`/`switch`, loops, array ou lista) viram pendência `[código]` no diário.
+
+Registros no projeto da funcionalidade: `docs/diario-de-bordo.md` (uma entrada por decisão, com data e hora) e `docs/adr/NNNN-slug.md` para as decisões difíceis de reverter. Detalhes em [`references/registros.md`](references/registros.md).
+
 ### `--learn` — aprender fazendo
 
 Mais perguntas que respostas, uma decisão real de cada vez. Antes de recomendar, a skill pergunta quais opções você vê e o que perde com cada uma.
@@ -34,14 +43,14 @@ Contexto: [problema, para quem e processo atual sem sistema]
 Resultado esperado: [o que a pessoa deve conseguir fazer]
 Regras ou limites que já conheço: [se houver]
 Conduza-me por Da Folha ao Código uma etapa por vez. Ajude-me a pensar antes
-de apresentar a recomendação. Ao final, entregue a Ficha, o Diário de Decisões,
+de apresentar a recomendação. Ao final, entregue a Ficha, o diário de bordo,
 suposições/perguntas em aberto, Brief para Assistente e um exercício parecido
 para eu resolver sozinho. Não implemente ainda.
 ```
 
 ### `--job` — entregar com raciocínio
 
-A skill propõe a decisão, explica o trade-off em poucas frases e pergunta quando falta uma decisão de negócio ou há uma porta de uma via.
+A skill propõe a decisão, apresenta o argumento completo (opções, critério, alternativa mais forte, o que derrubaria a escolha), pede sua contraprova e pergunta quando falta uma decisão de negócio ou há uma porta de uma via.
 
 ```text
 --job
@@ -49,7 +58,7 @@ Modele [funcionalidade] para [usuário/objetivo]. A stack é [linguagem e versã
 Processo atual: [como funciona hoje]
 Resultado e limites: [o que precisa acontecer e o que fica fora]
 Conduza as etapas necessárias sem pular nenhuma; agrupe as perguntas de cada
-etapa numa rodada. No final, entregue Ficha, Cartões de Decisão e Brief
+etapa numa rodada. No final, entregue Ficha, cartões, entradas do diário e Brief
 autocontido para outro assistente implementar. Não escreva o código da feature.
 ```
 
