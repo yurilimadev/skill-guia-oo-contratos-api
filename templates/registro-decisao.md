@@ -1,6 +1,6 @@
 # <NNNN> — <título curto>
 
-- **Data:** <AAAA-MM-DD>
+- **Data e hora:** <AAAA-MM-DD HH:MM>
 - **Status:** proposta / aceita / substituída por NNNN / descartada
 - **Origem:** atual / retroativa
 - **Entrada e modo:** Construir/Herdar/Operar · learn/job
