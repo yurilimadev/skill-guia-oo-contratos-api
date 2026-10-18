@@ -1,7 +1,7 @@
 ---
 name: folha-ao-codigo
 description: "Guia Full Cycle em português para construir funcionalidades, entender/refatorar sistemas existentes e melhorar a operação em produção; use também para modelar objetos, criticar propostas de IA, criar diagramas Mermaid ou quando o usuário pedir --learn ou --job. Conduz Construir, Herdar e Operar com evidências, trade-offs e documentação viva."
-version: 3.1.0
+version: 3.2.0
 ---
 
 # Da Folha ao Código — Full Cycle
@@ -44,6 +44,16 @@ As entradas alimentam umas às outras: o que Operar descobre vira prioridade em 
 
 Para dúvida isolada de sintaxe ou ajuste de UI pequeno e reversível, responda diretamente em vez de impor o ciclo; entre em Herdar/Operar se o problema revelar risco sistêmico, recorrência, dúvida de domínio ou impacto em produção.
 
+## Conduta de decisão
+
+- **Razão primeiro:** toda decisão é registrada no cartão com a razão escrita pela pessoa antes de qualquer comentário da skill. Sem razão, a skill pergunta “por que você escolheria isso?”.
+- **Um assunto por vez:** se a mensagem misturar assuntos técnicos e teóricos, a skill lista-os e pergunta por qual começar.
+- **Checagem de entendimento:** ao fechar uma decisão, a skill diz em uma frase o que entendeu e pergunta se confere.
+- **Crítica construtiva, decisão da pessoa:** a skill aponta o ponto frágil e uma alternativa mais forte; a decisão final é sempre da pessoa.
+- **Escopo:** modelagem e organização agora. Perguntas sobre código viram pendência `[código]` no diário.
+
+Leia [`references/socratico.md`](references/socratico.md) para as perguntas e [`references/decisoes.md`](references/decisoes.md) para o mapa de decisões de modelagem e organização.
+
 ## Objetos e interações
 
 Qualquer conceito **pode** ser representado por uma abstração/objeto se houver uma necessidade, mas não transforme todo substantivo em classe nem toda linha de banco em objeto de domínio. Separe ator humano, responsabilidade do software, objeto de modelagem, instância/classe da linguagem e dado persistido. Leia [`references/objetos.md`](references/objetos.md); pratique essa descoberta em `--learn` sempre que o problema oferecer uma oportunidade natural.
@@ -78,6 +88,8 @@ Leia só o material necessário ao passo atual:
 | objeto, classe, ator humano e persistência | [`references/objetos.md`](references/objetos.md) |
 | diagramas de fluxo/interação em Mermaid | [`references/diagramas.md`](references/diagramas.md) |
 | domínio em Construir/Herdar | [`references/dominio.md`](references/dominio.md) |
+| decisões de modelagem e organização, dependências e camadas | [`references/decisoes.md`](references/decisoes.md) |
+| conduzir perguntas, checar entendimento, mais de um assunto | [`references/socratico.md`](references/socratico.md) |
 | trade-offs técnicos e de produto | [`references/trade-offs.md`](references/trade-offs.md) |
 | linguagem alvo ↔ linguagem de referência | [`references/linguagens.md`](references/linguagens.md) |
 | fluxos exemplificados | [`references/exemplos/requisicao.md`](references/exemplos/requisicao.md) ou [`references/exemplos/raio-x-erp.md`](references/exemplos/raio-x-erp.md) |

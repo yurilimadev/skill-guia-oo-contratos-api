@@ -65,6 +65,13 @@ O ponto de partida pode ser qualquer etapa e qualquer estado do projeto. Se `doc
 
 Herdar é somente leitura por padrão. Operar não executa comandos nem muda DNS, servidor ou banco sem aprovação explícita. Toda evidência distingue “não existe”, “existe, não verificado” e “existe e verificado”.
 
+## Mudanças — versão 3.2.0
+
+- Razão escrita pela pessoa antes da crítica da skill, no cartão e nos modos.
+- Novo `references/socratico.md`: perguntas graduais, checagem de entendimento e separação de assuntos técnicos e teóricos.
+- Novo `references/decisoes.md`: mapa de decisões de modelagem e organização, com dependências de ciclo de vida, direção de importações e razões de mudança.
+- Data e hora nos registros: diário, decisões e cartões.
+
 ## Mudanças — versão 3.1.0
 
 - Explica objetos, classes/instâncias, atores humanos e responsabilidades do software; diferencia objetos persistidos de controles transitórios.

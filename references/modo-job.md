@@ -5,12 +5,15 @@ A skill propõe e registra; a pessoa valida decisões de negócio e portas de um
 ## Cadência por bloco
 
 1. Comece com a linha de estado (entrada, modo, etapa/passo, assunto).
-2. Leia só a referência da entrada/passo atual.
-3. Apresente diagnóstico/proposta, alternativa descartada e trade-off em 1–2 frases. Termine cada etapa/passo com proposta/próximo passo e Cartão de Decisão curto; num bloco só de inventário, registre “sem decisão neste passo” e faça Cartão mínimo de evidência/status.
-4. Pergunte só quando houver porta de uma via, informação de negócio que só a pessoa tenha ou hipótese que mudaria a prioridade. Agrupe perguntas daquela etapa numa rodada, com opções concretas e recomendada **(Recomendado)**; use ferramenta interativa se existir.
-5. Para afirmação sobre sistema real, separe evidência confirmada, declarada/não verificada e hipótese. Não use palpite como diagnóstico.
-6. Termine cada bloco com: o que foi decidido/encontrado, onde documentar (e se precisa de permissão), e próximo passo.
-7. Se o harness tiver lista de tarefas, uma tarefa por etapa/passo; atualize ao avançar.
+2. Se a mensagem tiver mais de um assunto (técnico ou teórico), liste-os e pergunte a ordem antes de propor. Veja [`socratico.md`](socratico.md).
+3. Leia só a referência da entrada/passo atual.
+4. Apresente o **argumento completo** da decisão, em bloco curto: afirmação, critério que pesa, por que a opção vence neste contexto, alternativa mais forte e o que a derrubaria. Use `trade-offs.md` como catálogo. Termine cada etapa/passo com proposta/próximo passo e Cartão de Decisão curto, com a parte da pessoa em branco; num bloco só de inventário, registre “sem decisão neste passo” e faça Cartão mínimo de evidência/status.
+5. **Contraprova:** peça à pessoa uma pergunta que teste a proposta contra o próprio processo (“esse caso existe no seu processo atual?”).
+6. **Razão primeiro:** não feche a decisão sem o campo “Minha razão” escrito pela pessoa. Aceitar a proposta não dispensa escrever a razão com as próprias palavras.
+7. Pergunte só quando houver porta de uma via, informação de negócio que só a pessoa tenha ou hipótese que mudaria a prioridade. Agrupe perguntas daquela etapa numa rodada, com opções concretas e recomendada **(Recomendado)**; use ferramenta interativa se existir.
+8. Para afirmação sobre sistema real, separe evidência confirmada, declarada/não verificada e hipótese. Não use palpite como diagnóstico.
+9. Termine cada bloco com: o que foi decidido/encontrado, onde documentar (e se precisa de permissão), próximo passo e checagem de entendimento: “Entendi que … Confere?”.
+10. Se o harness tiver lista de tarefas, uma tarefa por etapa/passo; atualize ao avançar.
 
 ## Início por entrada
 
