@@ -53,3 +53,27 @@ sequenceDiagram
 ```
 
 O diagrama não decide ainda se a regra de saldo pertence a um objeto `Estoque`, a uma ação ou a outro módulo; isso é uma decisão de domínio. Na versão `--learn`, peça à pessoa para propor as setas e responsabilidades antes de apresentar esse exemplo. Em Herdar, substitua os nós por componentes realmente encontrados e cite seus arquivos/linhas.
+
+## Hipóteses no desenho
+
+Diagramas de hierarquia e de fluxo usam a mesma convenção de status das hipóteses:
+
+- **Aresta sólida** (`-->`): elemento ou relação `testada`, confirmada por uma norteadora ou por evidência.
+- **Aresta tracejada** (`-.->`): `hipótese`, ainda não testada. Rotule com `?` quando a hipótese puder mudar o modelo.
+- **Refutada:** não aparece no desenho final; fica no cartão com a razão.
+
+Exemplo de hierarquia com uma hipótese aberta:
+
+```mermaid
+flowchart TD
+  A[Armário: Operações] --> B[Subdomínio: Estoque]
+  B --> C[Divisória: Requisições]
+  C --> D[Documento: REQ-número]
+  D --> E[Molde: Cabeçalho]
+  D -.-> F[Molde: Itens ?]
+  E --> G[Ocorrência gravada]
+```
+
+Na aresta tracejada `D -.-> F`, o molde de itens é hipótese: a norteadora 4 (história própria ou só dentro do documento) ainda não foi feita. Em `--learn`, a pessoa responde essa pergunta antes de a aresta virar sólida. Em `--job`, a skill apresenta o desenho e a tabela de hipóteses ao mesmo tempo.
+
+Hipótese no desenho não autoriza tabela: a forma no banco continua decisão de dados, registrada em cartão.

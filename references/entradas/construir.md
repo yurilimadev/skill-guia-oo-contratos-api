@@ -26,6 +26,16 @@ Leia com o vocabulário e, quando a decisão tocar em arquitetura, com `dominio.
 
 Justifique em uma frase o custo de modelar demais e o de modelar de menos. Se um caso pequeno revelar mais de cinco regras, estados ou módulos, pare e reclassifique. Pedido pequeno não vira reunião: normalmente envolve 1 ou 2 chapéus.
 
+## Conexão hierarquia × modelo (roda junto com as etapas 0–3)
+
+Antes de desenhar as pastas, a hierarquia precisa responder perguntas sobre consulta e uso. Elas estão em [`perguntas-norteadoras.md`](../perguntas-norteadoras.md). Não numere este bloco: ele acompanha as etapas 0–3.
+
+- **`--learn`: consulta antes do desenho.** A skill pergunta como o sistema é consultado e o que precisa responder (norteadoras 1 e 2) antes de qualquer desenho. Depois a pessoa desenha a hierarquia; cada elemento entra como `hipótese`.
+- **`--job`: desenho primeiro, teste depois.** A skill propõe a hierarquia com hipóteses marcadas e testa cada subdomínio contra as norteadoras. Cada hipótese vira `testada` ou `refutada`, e o resultado vai para o cartão.
+- **Ordem de cada subdomínio:** quem consulta → o que é documento → molde e ocorrência → campos → grampo ou referência → histórico. Não defina tabela antes de passar por essa ordem.
+- **Hipótese de tabela:** “cada molde vira uma tabela” é hipótese até a norteadora 10 testar um documento com mais de um molde. A forma no banco é decisão de dados, com cartão.
+- **Regra de saída:** nenhuma hipótese que afete porta de uma via fica aberta no Brief.
+
 ## Condução e lente de domínio
 
 Em cada etapa, identifique chapéus típicos e por quê (`references/chapeus.md`); mantenha Ficha, cartões, suposições, perguntas e glossário. Leia `references/dominio.md` nos pontos abaixo:
@@ -50,7 +60,7 @@ Classifique campo a campo:
 - **assinatura**: quem agiu; quando é identidade autenticada, vem da sessão;
 - **estado**: situação atual, se houver ciclo de vida.
 
-Pergunte identidade × valor, cardinalidade (um ou vários?), cópia × referência e unidade de medida. Gere candidatos a objeto a partir de necessidades, responsabilidades, dados e interações; não crie uma classe por substantivo nem por linha de tabela. Um objeto persistido, uma estrutura de valor e um coordenador transitório cumprem papéis diferentes. O que tem vida própria pode virar módulo; item que só existe no registro-pai pode ficar junto. Essas são escolhas com trade-off, não regras automáticas. Leia `references/objetos.md`. Indique Domínio, Dono do processo e Dados como chapéus usuais.
+Pergunte identidade × valor, cardinalidade (um ou vários?), cópia × referência e unidade de medida. Use a pasta sanfonada para localizar documento, folha, campo, grampo e referência. Gere candidatos a objeto a partir de necessidades, responsabilidades, dados e interações; não crie uma classe por substantivo nem por linha de tabela. Um objeto persistido, uma estrutura de valor e um coordenador transitório cumprem papéis diferentes. O que tem vida própria pode virar módulo; item que só existe no registro-pai pode ficar junto. Essas são escolhas com trade-off, não regras automáticas. Leia `references/objetos.md`. Indique Domínio, Dono do processo e Dados como chapéus usuais.
 
 ### Etapa 4 — estados
 

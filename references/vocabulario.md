@@ -6,6 +6,20 @@
 - **Caneta × papel**: quem segura a caneta (usuário que age) representa ator/permissão; o que está escrito no papel vira dado.
 - **Assunto**: o que está na folha e tem uma ficha própria em outra pasta; a folha aponta para ele (por exemplo, `unidadeId`).
 - **Vida própria × pedaço**: se algo pode existir sozinho, um módulo próprio é um padrão razoável; se só vive dentro de outro registro, costuma ficar embutido (como item do pedido). Compare custos antes de dividir ou juntar.
+- **Pasta sanfonada**: armário → pasta → divisória → documento → folha → campo; detalhes grampeados dependem do documento, referências apontam para fichas independentes. É uma lente de modelagem, não uma topologia física obrigatória.
+
+### Termos da pasta sanfonada
+
+| Termo | O que é no esboço | Pergunta de bolso |
+|---|---|---|
+| Domínio (armário) | Conjunto de subdomínios de um mesmo negócio | “Quais áreas compartilham regras e linguagem?” |
+| Subdomínio (pasta sanfonada) | Área cujas mudanças acontecem juntas | “Que assuntos mudam juntos?” |
+| Divisória | Tipo de documento dentro do subdomínio | “Que tipo de documento procuro aqui?” |
+| Molde | Folha em branco: define os campos de um tipo de folha | “Que campos existem antes de alguém preencher?” |
+| Ocorrência | Folha preenchida com uma situação real, gravada no banco | “Que situação concreta esta folha registra?” |
+| Documento | O que se consulta por número e muda de estado; pode reunir folhas de moldes diferentes | “Alguém pede pelo número e isso tem história própria?” |
+
+Um **documento** pode ter uma ou várias folhas de moldes diferentes; por isso o documento não é, por definição, uma folha. A pergunta “cada molde vira uma tabela?” é **hipótese** do esboço: a forma no banco é decisão de dados, registrada em cartão, com alternativas (uma tabela por molde, uma por documento, ocorrência em linha única ou em várias linhas).
 
 ## Quatro tipos de substantivo
 

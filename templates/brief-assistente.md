@@ -20,6 +20,13 @@
 - Tipos/folhas, campos e referências:
 - Estados e transições:
 
+### Hierarquia: confirmada e pendente
+
+- **Confirmada (testada):** subdomínios, divisórias, documentos, moldes e ocorrências que passaram pelas norteadoras, com a norteadora usada.
+- **Refutada (substituída):** o que foi descartado e por qual cartão.
+- **Pendente (hipótese aberta):** o que ainda não foi testado. Se afetar porta de uma via, o Brief não está pronto.
+- **Origem:** construir (proposto) ou herdar (declarado / implementado / verificado).
+
 ### Objetos e responsabilidades
 
 | Objeto/candidato | Necessidade/responsabilidade | Ator ou software | Persistente/transitório | Evidência/justificativa |

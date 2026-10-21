@@ -1,12 +1,12 @@
 ---
 name: folha-ao-codigo
-description: "Guia Full Cycle em português para construir funcionalidades, entender/refatorar sistemas existentes e melhorar a operação em produção; use também para modelar objetos, criticar propostas de IA, criar diagramas Mermaid ou quando o usuário pedir --learn ou --job. Conduz Construir, Herdar e Operar com evidências, trade-offs e documentação viva."
-version: 3.2.0
+description: "Guia Full Cycle em português para construir funcionalidades, entender/refatorar sistemas existentes e melhorar a operação em produção; use também para modelar objetos com a metáfora da pasta sanfonada, criticar propostas de IA, criar diagramas Mermaid ou quando o usuário pedir --learn ou --job. Conduz Construir, Herdar e Operar com evidências, trade-offs e documentação viva."
+version: 3.3.0
 ---
 
 # Da Folha ao Código — Full Cycle
 
-Quem constrói também entende, entrega, opera e aprende com o sistema. A metáfora continua: **todo sistema é um arquivo de pastas digitalizado**. Pergunte: *se isso fosse papel, qual seria a folha?* Esta skill ajuda a decidir a partir do domínio, a criticar propostas e a manter o raciocínio registrado; não presume que o projeto começa do zero.
+Quem constrói também entende, entrega, opera e aprende com o sistema. A metáfora continua: **todo sistema é um arquivo de pastas digitalizado**. Para modelar registros, use também a imagem da pasta sanfonada: armário → pasta → divisória → documento → folha → campo, com grampos e referências. Pergunte: *se isso fosse papel, qual seria a folha?* Esta skill ajuda a decidir a partir do domínio, a criticar propostas e a manter o raciocínio registrado; não presume que o projeto começa do zero.
 
 ## Linha de estado obrigatória
 
@@ -54,6 +54,15 @@ Para dúvida isolada de sintaxe ou ajuste de UI pequeno e reversível, responda 
 
 Leia [`references/socratico.md`](references/socratico.md) para as perguntas e [`references/decisoes.md`](references/decisoes.md) para o mapa de decisões de modelagem e organização.
 
+## Hierarquia e perguntas norteadoras
+
+A hierarquia (armário → subdomínio → divisória → documento → molde/ocorrência → campo) é hipótese até passar pelas perguntas de [`references/perguntas-norteadoras.md`](references/perguntas-norteadoras.md). Não é numerada e não substitui as etapas.
+
+- **`--learn`:** consulta antes do desenho. A pessoa responde como o dado é procurado e que respostas o sistema precisa dar; só então desenha.
+- **`--job`:** desenho primeiro, com hipóteses marcadas; depois testa cada subdomínio e registra `testada` ou `refutada`.
+- **Herdar:** o modelo existente é confrontado em três colunas: declarado (spec ou PDF), implementado (código) e verificado (uso ou teste).
+- Hipótese de tabela não é decisão. A forma no banco é decisão de dados, com cartão.
+
 ## Objetos e interações
 
 Qualquer conceito **pode** ser representado por uma abstração/objeto se houver uma necessidade, mas não transforme todo substantivo em classe nem toda linha de banco em objeto de domínio. Separe ator humano, responsabilidade do software, objeto de modelagem, instância/classe da linguagem e dado persistido. Leia [`references/objetos.md`](references/objetos.md); pratique essa descoberta em `--learn` sempre que o problema oferecer uma oportunidade natural.
@@ -85,6 +94,7 @@ Leia só o material necessário ao passo atual:
 | Necessidade | Referência |
 |---|---|
 | termos e relações entre folha, contrato e dependências | [`references/vocabulario.md`](references/vocabulario.md) |
+| perguntas que ligam consulta, hierarquia e modelo | [`references/perguntas-norteadoras.md`](references/perguntas-norteadoras.md) |
 | objeto, classe, ator humano e persistência | [`references/objetos.md`](references/objetos.md) |
 | diagramas de fluxo/interação em Mermaid | [`references/diagramas.md`](references/diagramas.md) |
 | domínio em Construir/Herdar | [`references/dominio.md`](references/dominio.md) |

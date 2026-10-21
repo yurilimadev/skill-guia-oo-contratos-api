@@ -112,3 +112,22 @@ no cartão antes de eu registrar.
 ```
 
 No `--job`, a skill apresenta o argumento completo e pede contraprova. Não fecha a decisão sem a razão da pessoa.
+
+## Perguntas por norteadora
+
+As perguntas completas, com pista e contraexemplo, estão em [`perguntas-norteadoras.md`](perguntas-norteadoras.md). Ao conduzir uma norteadora, use a mesma regra das demais: uma pergunta por vez, a razão da pessoa antes da crítica, e o resultado registrado como `testada` ou `refutada`.
+
+Exemplo em `--learn`, antes de qualquer desenho:
+
+```text
+Skill: Quando alguém procura uma requisição, pelo quê procura: número,
+       unidade, data ou produto?
+Pessoa: Pelo número, sempre.
+Skill: Então o número é a chave do documento. E sem abrir a requisição,
+       que resposta você precisa dar? Por exemplo, quanto já foi atendido
+       de um produto em todas as unidades?
+Pessoa: Isso é do relatório, e ele é lento.
+Skill: Anotei como hipótese: o saldo por produto não pode morar só
+       dentro do documento. Você quer que eu a registre como pergunta
+       aberta para a norteadora 2?
+```

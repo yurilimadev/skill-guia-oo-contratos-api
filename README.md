@@ -1,6 +1,6 @@
 # Da Folha ao Código — Full Cycle
 
-Skill em português para construir, herdar e operar sistemas. Ajuda a transformar domínio em decisões, descobrir objetos e responsabilidades, visualizar interações com Mermaid, entender o que já existe, proteger mudanças em produção e criticar propostas de IA. O método mantém a metáfora do papel e as sete etapas originais dentro do fluxo de Construir.
+Skill em português para construir, herdar e operar sistemas. Ajuda a transformar domínio em decisões, descobrir objetos e responsabilidades pela metáfora da pasta sanfonada, visualizar interações com Mermaid, entender o que já existe, proteger mudanças em produção e criticar propostas de IA. O método mantém a metáfora do papel e as sete etapas originais dentro do fluxo de Construir.
 
 ## Instalação
 
@@ -64,6 +64,15 @@ Se ainda não souber qual entrada escolher, descreva o problema: a skill sugere 
 O ponto de partida pode ser qualquer etapa e qualquer estado do projeto. Se `docs/` existir, a skill lê o diário, operação e decisões relevantes antes de perguntar; documentos vivos são atualizados, não recriados. A skill oferece escrever no projeto, mas só faz isso com permissão.
 
 Herdar é somente leitura por padrão. Operar não executa comandos nem muda DNS, servidor ou banco sem aprovação explícita. Toda evidência distingue “não existe”, “existe, não verificado” e “existe e verificado”.
+
+## Mudanças — versão 3.3.0
+
+- Perguntas norteadoras (`references/perguntas-norteadoras.md`) ligam consulta, hierarquia e modelo, sem numeração. Em `--learn`, consulta antes do desenho; em `--job`, desenho com hipóteses marcadas e teste depois.
+- Hipóteses no desenho: arestas tracejadas e tabela na Ficha, com status `hipótese`, `testada` ou `refutada`.
+- Glossário: molde (folha em branco), ocorrência (folha preenchida), documento (o que se consulta e muda de estado).
+- Herdar: spec em PDF entra como declarada; código como implementado; uso ou teste como verificado.
+- Acrescenta a metáfora da pasta sanfonada para armário, pasta, divisória, documento, folhas, campos, grampos, referências e verso.
+- Diferencia ator humano, responsabilidade do software, objetos/classes, persistência e objetos transitórios.
 
 ## Mudanças — versão 3.2.0
 
