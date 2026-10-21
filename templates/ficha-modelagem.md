@@ -35,7 +35,9 @@ Não invente nomes; use os chapéus de `references/chapeus.md` e pergunte quem o
 ### Modelo de domínio
 
 - **Glossário/contextos:**
-- **Mapa da pasta sanfonada (armário/pasta/divisória/documento/folhas):**
+- **Hierarquia (armário → subdomínio → divisória → documento → molde/ocorrência → campo):** ver tabela abaixo.
+- **Modo em que a hierarquia foi testada:** learn (consulta antes do desenho) / job (desenho e teste)
+- **Origem do modelo:** construir (proposto) / herdar (reconstruído: declarado, implementado, verificado)
 - **Identidade × valor:**
 - **Cardinalidades e unidades:**
 - **O que é copiado e o que é referência (incluindo histórico):**
@@ -43,6 +45,15 @@ Não invente nomes; use os chapéus de `references/chapeus.md` e pergunte quem o
 - **Eventos/fatos que precisam ser conhecidos:**
 - **Cenários do teste de estresse:** <3–5; pedido pequeno no máximo 2>
 - **Custo de mudança e gatilho para revisitar:**
+
+### Hierarquia e hipóteses
+
+Cada elemento do desenho aparece aqui com o status do teste. Não numere; use o nome do elemento. Nenhum Brief sai com `hipótese` que afete porta de uma via.
+
+| Elemento | Nível (subdomínio, divisória, documento, molde, ocorrência, campo) | Hipótese | Norteadora que testa | Status (`hipótese` / `testada` / `refutada`) | Cartão |
+|---|---|---|---|---|---|
+
+Convenção no desenho: arestas tracejadas para hipótese, sólidas para testada (ver [`../references/diagramas.md`](../references/diagramas.md)).
 
 ### Objetos/abstrações candidatas
 

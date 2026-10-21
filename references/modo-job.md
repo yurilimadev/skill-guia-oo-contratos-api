@@ -15,6 +15,15 @@ A skill propõe e registra; a pessoa valida decisões de negócio e portas de um
 9. Termine cada bloco com: o que foi decidido/encontrado, onde documentar (e se precisa de permissão), próximo passo e checagem de entendimento: “Entendi que … Confere?”.
 10. Se o harness tiver lista de tarefas, uma tarefa por etapa/passo; atualize ao avançar.
 
+## Ordem: desenho primeiro, teste depois
+
+Em Construir e Herdar, proponha a hierarquia já na primeira rodada, com hipóteses marcadas, e teste-a em seguida:
+
+1. Proponha o desenho por subdomínio (armário → subdomínio → divisória → documento → molde/ocorrência → campo), com cada elemento como `hipótese`.
+2. Para cada subdomínio, aplique as norteadoras de [`perguntas-norteadoras.md`](perguntas-norteadoras.md) e apresente uma tabela: elemento, norteadora usada, resultado (`testada` ou `refutada`) e o que muda no desenho se refutada.
+3. Registre cada refutação num cartão, com a razão da pessoa antes da sua crítica.
+4. Não feche o Brief com hipótese aberta que afete porta de uma via.
+
 ## Início por entrada
 
 - **Construir:** após triagem, entregue problema e plano da etapa atual. Proponha modelagem e teste de estresse de domínio em tabela; faça cartões para escolhas relevantes. Não pule etapas; em pedido pequeno, condense 8–10 em checklist.

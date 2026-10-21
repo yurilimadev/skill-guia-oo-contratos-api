@@ -65,11 +65,16 @@ O ponto de partida pode ser qualquer etapa e qualquer estado do projeto. Se `doc
 
 Herdar é somente leitura por padrão. Operar não executa comandos nem muda DNS, servidor ou banco sem aprovação explícita. Toda evidência distingue “não existe”, “existe, não verificado” e “existe e verificado”.
 
-## Mudanças — versão 3.2.0
+## Mudanças — versão 3.3.0
 
+- Perguntas norteadoras (`references/perguntas-norteadoras.md`) ligam consulta, hierarquia e modelo, sem numeração. Em `--learn`, consulta antes do desenho; em `--job`, desenho com hipóteses marcadas e teste depois.
+- Hipóteses no desenho: arestas tracejadas e tabela na Ficha, com status `hipótese`, `testada` ou `refutada`.
+- Glossário: molde (folha em branco), ocorrência (folha preenchida), documento (o que se consulta e muda de estado).
+- Herdar: spec em PDF entra como declarada; código como implementado; uso ou teste como verificado.
 - Acrescenta a metáfora da pasta sanfonada para armário, pasta, divisória, documento, folhas, campos, grampos, referências e verso.
 - Diferencia ator humano, responsabilidade do software, objetos/classes, persistência e objetos transitórios.
 
+## Mudanças — versão 3.2.0
 
 - Razão escrita pela pessoa antes da crítica da skill, no cartão e nos modos.
 - Novo `references/socratico.md`: perguntas graduais, checagem de entendimento e separação de assuntos técnicos e teóricos.

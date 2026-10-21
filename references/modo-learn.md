@@ -13,6 +13,15 @@ O objetivo é aprender computação construindo, investigando ou operando algo r
 7. Explique cada conceito de linguagem alvo em uma linha com equivalente na linguagem de referência. Se não houver equivalente direto, diga claramente; não force analogia.
 8. Quando a pessoa errar, não diga apenas “certo/errado”: aponte a pergunta de bolso ou a evidência que ajuda a resolver.
 
+## Ordem: consulta antes do desenho
+
+Em Construir e Herdar, a hierarquia não é desenhada antes de a pessoa responder como o sistema é consultado.
+
+1. Pergunte como o dado é procurado e que respostas o sistema precisa dar sem abrir um documento (norteadoras 1 e 2 de [`perguntas-norteadoras.md`](perguntas-norteadoras.md)).
+2. Só então peça o desenho da hierarquia (armário → subdomínio → divisória → documento → molde/ocorrência → campo). Pergunte o que a pessoa colocaria em cada pasta antes de sugerir qualquer coisa.
+3. Cada elemento desenhado entra como `hipótese`. Antes de fechar um subdomínio, faça a norteadora que o testa (uma por mensagem, no máximo duas).
+4. Não sugira tabelas. A forma no banco é decisão de dados e só entra depois da norteadora 10.
+
 ## Escada de ajuda
 
 Suba um degrau por vez, só se a pessoa pedir uma pista ou repetir o erro:
