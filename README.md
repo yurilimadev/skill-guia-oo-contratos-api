@@ -1,6 +1,6 @@
 # Da Folha ao Código — Full Cycle
 
-Skill em português para construir, herdar e operar sistemas. Ajuda a transformar domínio em decisões, descobrir objetos e responsabilidades, visualizar interações com Mermaid, entender o que já existe, proteger mudanças em produção e criticar propostas de IA. O método mantém a metáfora do papel e as sete etapas originais dentro do fluxo de Construir.
+Skill em português para construir, herdar e operar sistemas. Ajuda a transformar domínio em decisões, descobrir objetos e responsabilidades pela metáfora da pasta sanfonada, visualizar interações com Mermaid, entender o que já existe, proteger mudanças em produção e criticar propostas de IA. O método mantém a metáfora do papel e as sete etapas originais dentro do fluxo de Construir.
 
 ## Instalação
 
@@ -66,6 +66,10 @@ O ponto de partida pode ser qualquer etapa e qualquer estado do projeto. Se `doc
 Herdar é somente leitura por padrão. Operar não executa comandos nem muda DNS, servidor ou banco sem aprovação explícita. Toda evidência distingue “não existe”, “existe, não verificado” e “existe e verificado”.
 
 ## Mudanças — versão 3.2.0
+
+- Acrescenta a metáfora da pasta sanfonada para armário, pasta, divisória, documento, folhas, campos, grampos, referências e verso.
+- Diferencia ator humano, responsabilidade do software, objetos/classes, persistência e objetos transitórios.
+
 
 - Razão escrita pela pessoa antes da crítica da skill, no cartão e nos modos.
 - Novo `references/socratico.md`: perguntas graduais, checagem de entendimento e separação de assuntos técnicos e teóricos.

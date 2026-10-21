@@ -40,6 +40,8 @@ Sempre que o problema naturalmente trouxer pessoas, coisas, regras ou interaçõ
 4. Pergunte se cada candidato precisa de identidade/histórico e se precisa sobreviver no banco. Mostre a diferença entre classe (molde) e objeto/instância (exemplar) na linguagem confirmada.
 5. Só então compare com outra opção; a resposta “não precisa de nova classe/objeto” também pode ser correta.
 
+Quando ajudar, organize os candidatos na pasta sanfonada (documento/folha/campo, grampo ou referência) antes de falar em classe. Não peça para preencher todas as caixas se o problema não precisar delas.
+
 Use o exemplo do estoquista: a pessoa conta e confere, mas isso não obriga a existir uma classe `Estoquista`; `Estoque` pode proteger saldo e produtos, enquanto uma ação transitória coordena o recebimento. Pergunte se um total geral pertence ao estoque ou a uma consulta de relatório. Aplique a distinção ao problema atual, não como teoria solta.
 
 ## Diagramas Mermaid
