@@ -1,6 +1,6 @@
 # Da Folha ao Código — Full Cycle
 
-Skill em português para construir, herdar e operar sistemas. Ajuda a transformar domínio em decisões, descobrir objetos e responsabilidades pela metáfora da pasta sanfonada, visualizar interações com Mermaid, entender o que já existe, proteger mudanças em produção e criticar propostas de IA. O método mantém a metáfora do papel e as sete etapas originais dentro do fluxo de Construir.
+Skill em português para construir, herdar e operar sistemas. É um **alicerce, não uma biblioteca**: existe para você entender e defender a própria decisão. O critério é simples: ao desligar a skill, você explica a decisão, a razão e o que a mudaria, sem consultar. Aprende sob demanda, com notas de conceito curtas e bancadas executáveis.
 
 ## Instalação
 
@@ -25,6 +25,8 @@ O CLI `skills` instala em agentes compatíveis. Para direcionar a instalação, 
 - **Operar** — medir saúde, correção, segurança, backup e mudança segura sem executar comandos em produção sem autorização.
 
 `--learn` (aprender fazendo) e `--job` (entregar com raciocínio) funcionam nas três entradas. A lente de crítica, os arreios e a documentação viva acompanham qualquer caminho.
+
+Os textos são curtos por contrato: [`references/escrita.md`](references/escrita.md) define os tetos. O que o projeto exige fica no mapa de pré-requisitos ([`references/pre-requisitos.md`](references/pre-requisitos.md)), não em um currículo.
 
 ## Como começar
 
@@ -65,9 +67,18 @@ O ponto de partida pode ser qualquer etapa e qualquer estado do projeto. Se `doc
 
 Herdar é somente leitura por padrão. Operar não executa comandos nem muda DNS, servidor ou banco sem aprovação explícita. Toda evidência distingue “não existe”, “existe, não verificado” e “existe e verificado”.
 
+## Mudanças — versão 4.0.0
+
+- Vira alicerce: critério de sucesso é defender a decisão sem a skill.
+- Dieta de texto: `SKILL.md` de 123 para ~70 linhas; referências com teto; padrão de escrita em `references/escrita.md`.
+- Aprender sob demanda: `references/notas-de-conceito/` (uma nota por conceito, ≤40 linhas), `references/pre-requisitos.md` (escopo do projeto, não currículo) e `references/bancada.md` (exercício executável descartável em `/tmp`, no máximo duas por sessão).
+- Funde `socratico.md`, `decisoes.md` e `perguntas-norteadoras.md` em `references/guia-de-decisao.md`.
+- Cartão de Decisão com ≤10 campos (prova de entendimento); Registro de Decisão com 6 campos e 1–3 frases; diário com data e hora por sessão.
+- Portão de recuperação: sem explicar decisão, razão e o que a mudaria em três frases, não há Registro de Decisão.
+
 ## Mudanças — versão 3.3.0
 
-- Perguntas norteadoras (`references/perguntas-norteadoras.md`) ligam consulta, hierarquia e modelo, sem numeração. Em `--learn`, consulta antes do desenho; em `--job`, desenho com hipóteses marcadas e teste depois.
+- Perguntas norteadoras e condução socrática fundidas em `references/guia-de-decisao.md`. Em `--learn`, consulta antes do desenho; em `--job`, desenho com hipóteses marcadas e teste depois.
 - Hipóteses no desenho: arestas tracejadas e tabela na Ficha, com status `hipótese`, `testada` ou `refutada`.
 - Glossário: molde (folha em branco), ocorrência (folha preenchida), documento (o que se consulta e muda de estado).
 - Herdar: spec em PDF entra como declarada; código como implementado; uso ou teste como verificado.
@@ -77,8 +88,6 @@ Herdar é somente leitura por padrão. Operar não executa comandos nem muda DNS
 ## Mudanças — versão 3.2.0
 
 - Razão escrita pela pessoa antes da crítica da skill, no cartão e nos modos.
-- Novo `references/socratico.md`: perguntas graduais, checagem de entendimento e separação de assuntos técnicos e teóricos.
-- Novo `references/decisoes.md`: mapa de decisões de modelagem e organização, com dependências de ciclo de vida, direção de importações e razões de mudança.
 - Data e hora nos registros: diário, decisões e cartões.
 
 ## Mudanças — versão 3.1.0

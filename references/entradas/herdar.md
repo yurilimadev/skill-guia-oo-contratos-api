@@ -21,23 +21,18 @@ Use para sistema feito por outra pessoa **ou por você no passado**. Pode ser Ty
 | H5 | Rede de proteção | Antes de refatorar, planeje testes de caracterização, backup restaurável e homologação adequada | Pré-condições para mudança segura | QA, Dados e Infra: capturar comportamento e recuperação antes de alterar |
 | H6 | Plano incremental | Divida refatoração em passos pequenos, reversíveis e ordenados por risco; cada passo recebe Cartão e Brief | Plano e Briefs | Domínio, QA e Infra: confirmar fronteiras, prova e rollback |
 
-### H1 — Inventário
-
-Leia o repositório sem modificá-lo. Registre caminhos e versões observáveis; não deduza existência de ambientes, backup, log ou monitoramento por nomes de arquivos. Pergunte ao usuário onde há recursos que não ficam no repositório, como painel do provedor, DNS e processo de deploy; marque a resposta como declarada até conferir evidência.
-
 ### H2 — Domínio reverso
 
-Reconstrua armário/pastas/documentos/folhas, possíveis objetos/responsabilidades e a linguagem real a partir das estruturas e fluxos encontrados. Antes de propor a hierarquia, confronte-a com as norteadoras de [`../perguntas-norteadoras.md`](../perguntas-norteadoras.md) usando o modelo existente: quem consulta o quê, que respostas o sistema dá hoje, que mudanças acontecem juntas.
+Reconstrua armário/pastas/documentos/folhas, possíveis objetos/responsabilidades e a linguagem real a partir das estruturas e fluxos encontrados. Antes de propor a hierarquia, confronte-a com as norteadoras de [`../guia-de-decisao.md`](../guia-de-decisao.md) usando o modelo existente: quem consulta o quê, que respostas o sistema dá hoje, que mudanças acontecem juntas.
 
 Para cada elemento reconstruído (subdomínio, divisória, documento, molde, campo, grampo, referência), registre **três colunas**, sem misturar:
 
 | Elemento | Declarado (spec, PDF, docs, pessoa) | Implementado (código, migração, config, `arquivo:linha`) | Verificado (teste, consulta, dado redigido, uso real) | Status |
 |---|---|---|---|---|
 
-- **Declarado × implementado:** divergência entre spec e código é achado, não erro de quem escreveu. Pode indicar código que mudou sem a spec ou spec que descreve outro sistema.
-- **Implementado × verificado:** código que existe não prova que funciona. Um campo presente no esquema sem nenhum fluxo que o leia é “existe, não verificado”.
-- **Spec em PDF:** entra como **declarada**. Só vira referência de requisito depois de comparada com o código e com uso real. Se a spec for de outro sistema ou de outra versão, registre isso como suposição.
-- **Status:** `hipótese`, `testada` ou `refutada`, como em Construir. Use a mesma convenção de arestas tracejadas em [`../diagramas.md`](../diagramas.md). Procure conceitos que o código esconde: um status espalhado em strings, muitos booleanos, relação 1→N não representada, valor histórico referenciado onde deveria ser copiado, número sem unidade, pessoa confundida com papel, ou classe que só existe porque um ator humano tem o mesmo nome. Uma linha/tabela pode ser evidência de persistência, mas não prova uma classe um-para-um. Use `references/dominio.md` e `references/objetos.md`; não imponha remodelagem por estilo.
+- **Declarado × implementado:** divergência é achado, não erro. A spec em PDF entra como **declarada** e só vira referência depois de comparada com código e uso real.
+- **Implementado × verificado:** código que existe não prova que funciona; campo sem fluxo é “existe, não verificado”. Status: `hipótese`, `testada` ou `refutada` ([`../diagramas.md`](../diagramas.md)).
+- **O que o código esconde:** status em strings, booleanos demais, 1→N não representada, valor histórico referenciado onde deveria ser cópia, número sem unidade, pessoa confundida com papel. Linha de tabela não prova classe; veja [`../dominio.md`](../dominio.md) e [`../objetos.md`](../objetos.md).
 
 ### H3 — Fluxo de dados
 
@@ -76,10 +71,6 @@ Proponha a menor mudança útil, uma por vez, com dependências, risco, critéri
 
 Preencha [`../../templates/raio-x.md`](../../templates/raio-x.md): inventário, folhas/estados, fluxos, diagnóstico priorizado, rede de proteção, plano, suposições e perguntas. Preserva os procedimentos antigos: reconstruir a folha e os estados; apontar alertas por arquivo e motivo; propor tabela `de → para → por quê`; não mover arquivo sem aprovação. Os sinais antigos estão preservados acima; `references/revisao.md` fica como atalho compatível para esta entrada.
 
-Formato de proposta de movimentação preservado:
-
-| De | Para | Por quê / pergunta de bolso | Trade-off e reversibilidade |
-|---|---|---|---|
-| `rota.ts` valida saldo e grava movimentação | `estoque/regras` e `requisicao/acoes` | “Qual folha muda se a regra de saldo mudar?” | mais módulos; reduz bypass. Duas vias antes de publicar o contrato. |
+Proposta de movimentação: `de → para → por quê (pergunta de bolso) → trade-off`. Exemplo: `rota.ts` valida saldo → `estoque/regras` + `requisicao/acoes`, porque “qual folha muda se a regra de saldo mudar?”; custo: mais módulos, duas vias antes de publicar o contrato.
 
 Ao fechar o bloco, diga o que registrar em `docs/raio-x.md`, `docs/dominio/` e diário; ofereça atualizar documentos existentes mediante permissão. Mapeie chapéus e perguntas a levar em `templates/mapa-envolvidos.md`.

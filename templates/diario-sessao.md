@@ -1,14 +1,15 @@
 # Diário de bordo — <projeto>
 
-Uma entrada curta (máximo 10 linhas) por sessão; links mantêm o raciocínio sem repetir os Registros.
+Uma entrada por **sessão**: conversa contínua sobre o mesmo projeto e funcionalidade. Trocar de modo ou de entrada não encerra a sessão; retomar em outro dia abre uma nova.
 
 ```markdown
 ## <AAAA-MM-DD HH:MM> — <entrada>/<modo> — <assunto>
-- Ponto de partida e evidência:
-- O que foi feito/descoberto:
-- Decisões: [0001](decisoes/0001-titulo.md) / nenhuma
+- Decisão do dia:
+- Minha razão, em uma linha:
+- Descoberta ou evidência:
+- Registros: `decisoes/NNNN-titulo.md` / nenhum
 - Suposições e perguntas abertas:
-- Próximo passo, responsável (chapéu) e evidência esperada:
+- Próximo passo:
 ```
 
-Inclua apenas dados necessários; nunca segredos ou detalhes pessoais desnecessários. Não reescreva entradas anteriores: acrescente uma nova sessão e atualize os documentos vivos relacionados.
+Máximo 10 linhas. Nunca segredos ou dados pessoais desnecessários. Não reescreva entradas antigas: acrescente uma nova e atualize os documentos vivos.

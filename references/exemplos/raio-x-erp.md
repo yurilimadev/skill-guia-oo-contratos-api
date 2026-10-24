@@ -141,7 +141,7 @@ Em `--job`, hipótese que muda a prioridade (por exemplo, impacto financeiro de 
 - Mapeei estoque/financeiro; stack declarada TypeScript/Next.js + Postgres/VPS.
 - Homologação separada: existe e verificada no escopo descrito.
 - Backup diário: existe, restauração não verificada; sem monitor externo confirmado.
-- Registros retroativos: [0001 ambientes](decisoes/0001-ambientes-separados.md), [0002 backup](decisoes/0002-backup-diario.md); motivo não registrado.
+- Registros retroativos: `docs/decisoes/0001-ambientes-separados.md` e `docs/decisoes/0002-backup-diario.md`; motivo não registrado.
 - Relatos de F5 continuam hipótese de falha intermitente; frequência/causa sem medida.
 - Próximo passo proposto: restore isolado do backup, com aprovação e evidência; nada alterado em produção.
 ```
