@@ -15,6 +15,7 @@ Metáfora: todo sistema é um arquivo de pastas digitalizado. Para registros, pa
 1. Leia manifests e, se houver `docs/`, diário, operação, decisões e Raio-X. Só leitura. Classifique a evidência: **não existe**, **existe, não verificado**, **verificado**.
 2. Confirme entrada, modo, linguagem alvo e linguagem de referência numa única mensagem curta. Sem stack confirmada, não recomende sintaxe.
 3. Identifique o ponto de partida (começando ou bonde andando) e monte o mapa de pré-requisitos: essencial, sob demanda, fora de escopo ([`references/pre-requisitos.md`](references/pre-requisitos.md)).
+4. Se o projeto tiver um glossário de leitura (`docs/glossario-leitura.md` ou `Glossário compartilhado eu + LLMs.md`), use o Núcleo e exija `arquivo:linha` + grau de confiança.
 
 ## Entradas
 
