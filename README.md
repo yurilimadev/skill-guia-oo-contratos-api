@@ -2,21 +2,69 @@
 
 Skill em português para construir, herdar e operar sistemas. É um **alicerce, não uma biblioteca**: existe para você entender e defender a própria decisão. O critério é simples: ao desligar a skill, você explica a decisão, a razão e o que a mudaria, sem consultar. Aprende sob demanda, com notas de conceito curtas e bancadas executáveis.
 
-## Instalação
+## Instalação, atualização e remoção
 
-No projeto em que quer usar a skill:
+Requisito: Node.js com `npx`. Os comandos são iguais em Linux, macOS e Windows (PowerShell ou Prompt de Comando). Só muda a citação de `*`: `'*'` no PowerShell, `"*"` no Prompt.
+
+| Escopo | Vale para | Como |
+|---|---|---|
+| **Global** | todos os projetos do seu usuário | acrescente `-g` |
+| **Projeto** | só o projeto atual | rode na raiz do projeto, sem `-g` |
+
+### Instalar
+
+Global:
 
 ```bash
-npx skills add yurilimadev/skill-guia-oo-contratos-api
+npx skills add yurilimadev/skill-guia-oo-contratos-api -g -s folha-ao-codigo
 ```
 
-Para instalar globalmente, acrescente `-g`:
+No projeto:
 
 ```bash
-npx skills add yurilimadev/skill-guia-oo-contratos-api -g
+npx skills add yurilimadev/skill-guia-oo-contratos-api -s folha-ao-codigo
 ```
 
-O CLI `skills` instala em agentes compatíveis. Para direcionar a instalação, consulte `npx skills add --help`.
+Variações úteis: `-y` não pergunta nada; `--all` instala todas as skills do repositório para todos os agentes; `-a '*'` escolhe todos os agentes; `--copy` copia em vez de criar link simbólico.
+
+### Atualizar
+
+```bash
+npx skills update folha-ao-codigo -g -y   # global
+npx skills update folha-ao-codigo -p -y   # projeto
+npx skills update -g -y                   # todas as globais
+```
+
+### Remover
+
+```bash
+npx skills remove folha-ao-codigo -g -y   # global
+npx skills remove folha-ao-codigo -y      # projeto
+```
+
+Para um agente específico, acrescente `-a <agente>`. Veja os nomes com `npx skills list -g`.
+
+### Conferir
+
+```bash
+npx skills list -g   # globais
+npx skills list      # do projeto
+```
+
+### Testar um clone ou branch
+
+Para usar uma versão ainda não publicada, instale a partir do clone local:
+
+```bash
+npx skills add /caminho/do/clone -g -s folha-ao-codigo --copy -y
+```
+
+O escopo passa a apontar para o caminho local. Depois do teste, reinstale a partir do GitHub para voltar à versão publicada.
+
+### Onde fica
+
+- Global: `~/.agents/skills/folha-ao-codigo` (Windows: `%USERPROFILE%\.agents\skills\folha-ao-codigo`).
+- No projeto: `.agents/skills/` ou `.opencode/skills/`, conforme o agente. `npx skills list` mostra o caminho real.
 
 ## As três entradas
 
