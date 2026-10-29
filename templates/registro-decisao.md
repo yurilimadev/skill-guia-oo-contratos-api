@@ -2,18 +2,9 @@
 
 - **Data e hora:** <AAAA-MM-DD HH:MM>
 - **Status:** proposta / aceita / substituída por NNNN / descartada
-- **Origem:** atual / retroativa
-- **Entrada e modo:** Construir/Herdar/Operar · learn/job
-- **Contexto e problema:**
-- **Evidência:** <o que foi visto, onde e quando; ou “não verificado”>
-- **Chapéus consultados:**
-- **Opções consideradas:**
-- **Decisão:**
-- **Motivo:** <se desconhecido em decisão retroativa, escrever “motivo não registrado”>
-- **Consequências/custos:**
-- **Reversibilidade:** porta de uma via / duas vias
-- **Pontos fracos:**
-- **Como verificar / quando revisitar:**
-- **Suposições ou perguntas ligadas:**
+- **Contexto, evidência e decisão (1–3 frases):**
+- **Alternativas descartadas e por quê (opcional):**
+- **Consequências, custo de desfazer e reversibilidade:**
+- **Quando revisitar:**
 
-Se uma decisão mudar, crie outro número, relacione “substitui NNNN” e atualize o status do registro anterior. Não apague o histórico do raciocínio.
+Só para decisão difícil de reverter, surpreendente sem contexto e resultado de trade-off real. Se faltar um dos três, fica só no diário. Não apague histórico: a nova decisão diz "substitui NNNN" e o status da antiga muda.
